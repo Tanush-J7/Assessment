@@ -1,0 +1,766 @@
+{
+  "HKEX": [
+    {
+      "ticker": "0700.HK",
+      "asset_name": "Tencent Holdings",
+      "exchange": "HKEX",
+      "current_price": 409.2,
+      "predicted_price_n1": 424.51,
+      "predicted_change_pct": 3.74,
+      "sentiment_score": 0.14,
+      "sentiment_direction": "Neutral",
+      "social_mentions": 35,
+      "recommended_position": "Long (Buy)",
+      "sr_levels": {
+        "pivot_point": 408.87,
+        "resistance_1": 410.33,
+        "resistance_2": 411.07,
+        "support_1": 408.13,
+        "support_2": 406.67,
+        "rolling_min_10d": 375.2,
+        "rolling_max_10d": 431.2
+      },
+      "validation_metrics": {
+        "test_samples": 14,
+        "rmse": 9.754,
+        "mae": 8.111,
+        "mape_pct": 1.97,
+        "directional_accuracy_pct": 35.7
+      },
+      "feature_importances": {
+        "sma_10": 0.5659,
+        "sma_5": 0.3883,
+        "Close": 0.0363,
+        "volatility_5h": 0.0052,
+        "dist_from_pivot": 0.0014,
+        "Volume": 0.0012,
+        "rsi_14": 0.0006,
+        "sentiment_momentum": 0.0006,
+        "return_1h": 0.0004,
+        "hourly_social_sentiment": 0.0001,
+        "sentiment_ma_3h": 0.0,
+        "mentions": 0.0
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 417.8,
+          "predicted": 423.93
+        },
+        {
+          "actual": 412.8,
+          "predicted": 424.04
+        },
+        {
+          "actual": 412.4,
+          "predicted": 423.86
+        },
+        {
+          "actual": 412.8,
+          "predicted": 424.68
+        },
+        {
+          "actual": 411.8,
+          "predicted": 424.6
+        },
+        {
+          "actual": 409.4,
+          "predicted": 424.68
+        },
+        {
+          "actual": 409.2,
+          "predicted": 423.71
+        },
+        {
+          "actual": 409.6,
+          "predicted": 424.51
+        }
+      ]
+    },
+    {
+      "ticker": "9988.HK",
+      "asset_name": "Alibaba Group",
+      "exchange": "HKEX",
+      "current_price": 100.5,
+      "predicted_price_n1": 104.97,
+      "predicted_change_pct": 4.45,
+      "sentiment_score": 0.217,
+      "sentiment_direction": "Bullish",
+      "social_mentions": 35,
+      "recommended_position": "Long (Buy)",
+      "sr_levels": {
+        "pivot_point": 100.5,
+        "resistance_1": 100.7,
+        "resistance_2": 100.8,
+        "support_1": 100.4,
+        "support_2": 100.2,
+        "rolling_min_10d": 95.1,
+        "rolling_max_10d": 109.4
+      },
+      "validation_metrics": {
+        "test_samples": 14,
+        "rmse": 4.089,
+        "mae": 4.069,
+        "mape_pct": 4.03,
+        "directional_accuracy_pct": 35.7
+      },
+      "feature_importances": {
+        "Close": 0.9138,
+        "return_1h": 0.0488,
+        "sma_10": 0.0138,
+        "volatility_5h": 0.0088,
+        "Volume": 0.0081,
+        "sentiment_ma_3h": 0.002,
+        "sma_5": 0.0018,
+        "hourly_social_sentiment": 0.0012,
+        "rsi_14": 0.0005,
+        "sentiment_momentum": 0.0005,
+        "dist_from_pivot": 0.0004,
+        "mentions": 0.0004
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 101.6,
+          "predicted": 105.23
+        },
+        {
+          "actual": 100.9,
+          "predicted": 105.2
+        },
+        {
+          "actual": 100.7,
+          "predicted": 105.2
+        },
+        {
+          "actual": 100.8,
+          "predicted": 105.16
+        },
+        {
+          "actual": 100.6,
+          "predicted": 105.14
+        },
+        {
+          "actual": 100.8,
+          "predicted": 105.15
+        },
+        {
+          "actual": 100.5,
+          "predicted": 105.06
+        },
+        {
+          "actual": 100.6,
+          "predicted": 104.97
+        }
+      ]
+    },
+    {
+      "ticker": "3690.HK",
+      "asset_name": "Meituan",
+      "exchange": "HKEX",
+      "current_price": 72.75,
+      "predicted_price_n1": 75.07,
+      "predicted_change_pct": 3.18,
+      "sentiment_score": 0.009,
+      "sentiment_direction": "Neutral",
+      "social_mentions": 35,
+      "recommended_position": "Long (Buy)",
+      "sr_levels": {
+        "pivot_point": 72.7,
+        "resistance_1": 73.1,
+        "resistance_2": 73.35,
+        "support_1": 72.45,
+        "support_2": 72.05,
+        "rolling_min_10d": 68.85,
+        "rolling_max_10d": 83.0
+      },
+      "validation_metrics": {
+        "test_samples": 14,
+        "rmse": 1.477,
+        "mae": 1.231,
+        "mape_pct": 1.67,
+        "directional_accuracy_pct": 50.0
+      },
+      "feature_importances": {
+        "Close": 0.4071,
+        "sma_10": 0.3195,
+        "rsi_14": 0.1308,
+        "sma_5": 0.1014,
+        "volatility_5h": 0.0202,
+        "Volume": 0.0161,
+        "dist_from_pivot": 0.0037,
+        "return_1h": 0.0011,
+        "hourly_social_sentiment": 0.0,
+        "sentiment_momentum": 0.0,
+        "sentiment_ma_3h": 0.0,
+        "mentions": 0.0
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 75.5,
+          "predicted": 75.87
+        },
+        {
+          "actual": 74.35,
+          "predicted": 75.44
+        },
+        {
+          "actual": 73.9,
+          "predicted": 75.27
+        },
+        {
+          "actual": 72.85,
+          "predicted": 75.31
+        },
+        {
+          "actual": 73.05,
+          "predicted": 75.38
+        },
+        {
+          "actual": 73.25,
+          "predicted": 75.0
+        },
+        {
+          "actual": 72.75,
+          "predicted": 75.0
+        },
+        {
+          "actual": 72.85,
+          "predicted": 75.07
+        }
+      ]
+    },
+    {
+      "ticker": "1211.HK",
+      "asset_name": "BYD Company",
+      "exchange": "HKEX",
+      "current_price": 69.3,
+      "predicted_price_n1": 69.02,
+      "predicted_change_pct": -0.4,
+      "sentiment_score": 0.253,
+      "sentiment_direction": "Bullish",
+      "social_mentions": 35,
+      "recommended_position": "Short (Sell)",
+      "sr_levels": {
+        "pivot_point": 69.22,
+        "resistance_1": 69.33,
+        "resistance_2": 69.47,
+        "support_1": 69.08,
+        "support_2": 68.97,
+        "rolling_min_10d": 67.0,
+        "rolling_max_10d": 76.85
+      },
+      "validation_metrics": {
+        "test_samples": 14,
+        "rmse": 0.724,
+        "mae": 0.576,
+        "mape_pct": 0.81,
+        "directional_accuracy_pct": 64.3
+      },
+      "feature_importances": {
+        "Close": 0.7734,
+        "sma_5": 0.1122,
+        "Volume": 0.0399,
+        "rsi_14": 0.0307,
+        "sma_10": 0.0172,
+        "volatility_5h": 0.0104,
+        "sentiment_ma_3h": 0.0072,
+        "mentions": 0.0034,
+        "hourly_social_sentiment": 0.0023,
+        "return_1h": 0.0013,
+        "dist_from_pivot": 0.001,
+        "sentiment_momentum": 0.0009
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 71.95,
+          "predicted": 71.69
+        },
+        {
+          "actual": 69.95,
+          "predicted": 71.56
+        },
+        {
+          "actual": 69.6,
+          "predicted": 69.6
+        },
+        {
+          "actual": 69.65,
+          "predicted": 69.93
+        },
+        {
+          "actual": 69.45,
+          "predicted": 70.72
+        },
+        {
+          "actual": 69.15,
+          "predicted": 69.29
+        },
+        {
+          "actual": 69.3,
+          "predicted": 68.84
+        },
+        {
+          "actual": 69.2,
+          "predicted": 69.02
+        }
+      ]
+    },
+    {
+      "ticker": "0005.HK",
+      "asset_name": "HSBC Holdings",
+      "exchange": "HKEX",
+      "current_price": 141.2,
+      "predicted_price_n1": 138.19,
+      "predicted_change_pct": -2.13,
+      "sentiment_score": 0.159,
+      "sentiment_direction": "Bullish",
+      "social_mentions": 35,
+      "recommended_position": "Short (Sell)",
+      "sr_levels": {
+        "pivot_point": 141.37,
+        "resistance_1": 141.83,
+        "resistance_2": 142.07,
+        "support_1": 141.13,
+        "support_2": 140.67,
+        "rolling_min_10d": 131.1,
+        "rolling_max_10d": 143.3
+      },
+      "validation_metrics": {
+        "test_samples": 14,
+        "rmse": 3.439,
+        "mae": 3.292,
+        "mape_pct": 2.32,
+        "directional_accuracy_pct": 35.7
+      },
+      "feature_importances": {
+        "Close": 0.7939,
+        "rsi_14": 0.1448,
+        "sma_10": 0.0181,
+        "return_1h": 0.0139,
+        "volatility_5h": 0.0109,
+        "dist_from_pivot": 0.0092,
+        "sma_5": 0.0044,
+        "Volume": 0.0022,
+        "sentiment_ma_3h": 0.0015,
+        "hourly_social_sentiment": 0.0007,
+        "sentiment_momentum": 0.0003,
+        "mentions": 0.0002
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 143.3,
+          "predicted": 138.67
+        },
+        {
+          "actual": 141.1,
+          "predicted": 140.65
+        },
+        {
+          "actual": 140.8,
+          "predicted": 138.09
+        },
+        {
+          "actual": 140.9,
+          "predicted": 138.1
+        },
+        {
+          "actual": 141.0,
+          "predicted": 138.09
+        },
+        {
+          "actual": 141.2,
+          "predicted": 138.25
+        },
+        {
+          "actual": 141.2,
+          "predicted": 138.07
+        },
+        {
+          "actual": 141.6,
+          "predicted": 138.19
+        }
+      ]
+    }
+  ],
+  "KRX": [
+    {
+      "ticker": "005930.KS",
+      "asset_name": "Samsung Electronics",
+      "exchange": "KRX",
+      "current_price": 204750.0,
+      "predicted_price_n1": 196017.48,
+      "predicted_change_pct": -4.26,
+      "sentiment_score": 0.088,
+      "sentiment_direction": "Neutral",
+      "social_mentions": 35,
+      "recommended_position": "Short (Sell)",
+      "sr_levels": {
+        "pivot_point": 205333.33,
+        "resistance_1": 206166.67,
+        "resistance_2": 206833.33,
+        "support_1": 204666.67,
+        "support_2": 203833.33,
+        "rolling_min_10d": 179200.0,
+        "rolling_max_10d": 249000.0
+      },
+      "validation_metrics": {
+        "test_samples": 12,
+        "rmse": 8671.21,
+        "mae": 8622.998,
+        "mape_pct": 4.29,
+        "directional_accuracy_pct": 25.0
+      },
+      "feature_importances": {
+        "sma_10": 0.4464,
+        "sma_5": 0.4003,
+        "Close": 0.1255,
+        "dist_from_pivot": 0.0096,
+        "Volume": 0.0084,
+        "rsi_14": 0.0052,
+        "volatility_5h": 0.0024,
+        "return_1h": 0.0021,
+        "sentiment_momentum": 0.0001,
+        "hourly_social_sentiment": 0.0,
+        "sentiment_ma_3h": 0.0,
+        "mentions": 0.0
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 198300.0,
+          "predicted": 189924.39
+        },
+        {
+          "actual": 199600.0,
+          "predicted": 191359.71
+        },
+        {
+          "actual": 199650.0,
+          "predicted": 189734.17
+        },
+        {
+          "actual": 201000.0,
+          "predicted": 190776.77
+        },
+        {
+          "actual": 203000.0,
+          "predicted": 196113.46
+        },
+        {
+          "actual": 205000.0,
+          "predicted": 196081.54
+        },
+        {
+          "actual": 204750.0,
+          "predicted": 196003.75
+        },
+        {
+          "actual": 205500.0,
+          "predicted": 196017.48
+        }
+      ]
+    },
+    {
+      "ticker": "000660.KS",
+      "asset_name": "SK Hynix",
+      "exchange": "KRX",
+      "current_price": 1275000.0,
+      "predicted_price_n1": 1200021.68,
+      "predicted_change_pct": -5.88,
+      "sentiment_score": -0.022,
+      "sentiment_direction": "Neutral",
+      "social_mentions": 35,
+      "recommended_position": "Short (Sell)",
+      "sr_levels": {
+        "pivot_point": 1278000.0,
+        "resistance_1": 1284000.0,
+        "resistance_2": 1291000.0,
+        "support_1": 1271000.0,
+        "support_2": 1265000.0,
+        "rolling_min_10d": 1089000.0,
+        "rolling_max_10d": 1587000.0
+      },
+      "validation_metrics": {
+        "test_samples": 12,
+        "rmse": 67826.824,
+        "mae": 63956.587,
+        "mape_pct": 5.15,
+        "directional_accuracy_pct": 25.0
+      },
+      "feature_importances": {
+        "sma_5": 0.4021,
+        "sma_10": 0.3813,
+        "Close": 0.1447,
+        "volatility_5h": 0.0316,
+        "dist_from_pivot": 0.0109,
+        "sentiment_ma_3h": 0.0065,
+        "Volume": 0.0063,
+        "rsi_14": 0.0058,
+        "sentiment_momentum": 0.0058,
+        "return_1h": 0.0049,
+        "mentions": 0.0001,
+        "hourly_social_sentiment": 0.0
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 1214000.0,
+          "predicted": 1153398.46
+        },
+        {
+          "actual": 1220000.0,
+          "predicted": 1173893.15
+        },
+        {
+          "actual": 1222000.0,
+          "predicted": 1172038.32
+        },
+        {
+          "actual": 1239000.0,
+          "predicted": 1168161.6
+        },
+        {
+          "actual": 1249000.0,
+          "predicted": 1165142.81
+        },
+        {
+          "actual": 1275000.0,
+          "predicted": 1160124.71
+        },
+        {
+          "actual": 1275000.0,
+          "predicted": 1198632.38
+        },
+        {
+          "actual": 1277000.0,
+          "predicted": 1200021.68
+        }
+      ]
+    },
+    {
+      "ticker": "035420.KS",
+      "asset_name": "NAVER",
+      "exchange": "KRX",
+      "current_price": 195500.0,
+      "predicted_price_n1": 188912.22,
+      "predicted_change_pct": -3.37,
+      "sentiment_score": 0.228,
+      "sentiment_direction": "Bullish",
+      "social_mentions": 35,
+      "recommended_position": "Short (Sell)",
+      "sr_levels": {
+        "pivot_point": 195833.33,
+        "resistance_1": 196666.67,
+        "resistance_2": 197133.33,
+        "support_1": 195366.67,
+        "support_2": 194533.33,
+        "rolling_min_10d": 166000.0,
+        "rolling_max_10d": 197900.0
+      },
+      "validation_metrics": {
+        "test_samples": 12,
+        "rmse": 5409.428,
+        "mae": 5274.523,
+        "mape_pct": 2.72,
+        "directional_accuracy_pct": 41.7
+      },
+      "feature_importances": {
+        "Close": 0.8605,
+        "sma_10": 0.084,
+        "volatility_5h": 0.0206,
+        "rsi_14": 0.0121,
+        "Volume": 0.0068,
+        "sentiment_ma_3h": 0.0058,
+        "sma_5": 0.0042,
+        "return_1h": 0.0039,
+        "dist_from_pivot": 0.0018,
+        "sentiment_momentum": 0.0002,
+        "hourly_social_sentiment": 0.0,
+        "mentions": 0.0
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 193000.0,
+          "predicted": 189157.52
+        },
+        {
+          "actual": 193650.0,
+          "predicted": 188673.19
+        },
+        {
+          "actual": 193200.0,
+          "predicted": 187811.8
+        },
+        {
+          "actual": 192850.0,
+          "predicted": 188118.4
+        },
+        {
+          "actual": 192600.0,
+          "predicted": 187633.41
+        },
+        {
+          "actual": 193500.0,
+          "predicted": 187642.74
+        },
+        {
+          "actual": 195500.0,
+          "predicted": 188378.55
+        },
+        {
+          "actual": 196200.0,
+          "predicted": 188912.22
+        }
+      ]
+    },
+    {
+      "ticker": "005380.KS",
+      "asset_name": "Hyundai Motor",
+      "exchange": "KRX",
+      "current_price": 271500.0,
+      "predicted_price_n1": 274790.57,
+      "predicted_change_pct": 1.21,
+      "sentiment_score": -0.057,
+      "sentiment_direction": "Neutral",
+      "social_mentions": 35,
+      "recommended_position": "Long (Buy)",
+      "sr_levels": {
+        "pivot_point": 272166.67,
+        "resistance_1": 272833.33,
+        "resistance_2": 273666.67,
+        "support_1": 271333.33,
+        "support_2": 270666.67,
+        "rolling_min_10d": 267500.0,
+        "rolling_max_10d": 309500.0
+      },
+      "validation_metrics": {
+        "test_samples": 12,
+        "rmse": 2215.91,
+        "mae": 1802.329,
+        "mape_pct": 0.66,
+        "directional_accuracy_pct": 83.3
+      },
+      "feature_importances": {
+        "Close": 0.4604,
+        "sma_10": 0.1463,
+        "rsi_14": 0.115,
+        "volatility_5h": 0.0899,
+        "sentiment_momentum": 0.0659,
+        "Volume": 0.0507,
+        "return_1h": 0.0301,
+        "sma_5": 0.0197,
+        "dist_from_pivot": 0.0159,
+        "sentiment_ma_3h": 0.0044,
+        "hourly_social_sentiment": 0.0016,
+        "mentions": 0.0001
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 274500.0,
+          "predicted": 274203.7
+        },
+        {
+          "actual": 276000.0,
+          "predicted": 274916.4
+        },
+        {
+          "actual": 273000.0,
+          "predicted": 274766.18
+        },
+        {
+          "actual": 271500.0,
+          "predicted": 272892.91
+        },
+        {
+          "actual": 272000.0,
+          "predicted": 273937.56
+        },
+        {
+          "actual": 272000.0,
+          "predicted": 274316.47
+        },
+        {
+          "actual": 271500.0,
+          "predicted": 275903.99
+        },
+        {
+          "actual": 272000.0,
+          "predicted": 274790.57
+        }
+      ]
+    },
+    {
+      "ticker": "051910.KS",
+      "asset_name": "LG Chem",
+      "exchange": "KRX",
+      "current_price": 243500.0,
+      "predicted_price_n1": 239820.01,
+      "predicted_change_pct": -1.51,
+      "sentiment_score": 0.139,
+      "sentiment_direction": "Neutral",
+      "social_mentions": 35,
+      "recommended_position": "Moderate Short",
+      "sr_levels": {
+        "pivot_point": 244500.0,
+        "resistance_1": 246500.0,
+        "resistance_2": 248000.0,
+        "support_1": 243000.0,
+        "support_2": 241000.0,
+        "rolling_min_10d": 221500.0,
+        "rolling_max_10d": 253500.0
+      },
+      "validation_metrics": {
+        "test_samples": 12,
+        "rmse": 3635.005,
+        "mae": 3132.688,
+        "mape_pct": 1.31,
+        "directional_accuracy_pct": 50.0
+      },
+      "feature_importances": {
+        "Close": 0.4929,
+        "volatility_5h": 0.1241,
+        "sma_10": 0.096,
+        "sma_5": 0.0895,
+        "rsi_14": 0.0624,
+        "return_1h": 0.0492,
+        "dist_from_pivot": 0.0296,
+        "Volume": 0.0226,
+        "hourly_social_sentiment": 0.0209,
+        "sentiment_ma_3h": 0.0079,
+        "mentions": 0.0029,
+        "sentiment_momentum": 0.0021
+      },
+      "test_actual_vs_pred": [
+        {
+          "actual": 235000.0,
+          "predicted": 232950.34
+        },
+        {
+          "actual": 238500.0,
+          "predicted": 237727.93
+        },
+        {
+          "actual": 244000.0,
+          "predicted": 236805.41
+        },
+        {
+          "actual": 242000.0,
+          "predicted": 238764.38
+        },
+        {
+          "actual": 242000.0,
+          "predicted": 240135.96
+        },
+        {
+          "actual": 243000.0,
+          "predicted": 239849.66
+        },
+        {
+          "actual": 243500.0,
+          "predicted": 240174.28
+        },
+        {
+          "actual": 245000.0,
+          "predicted": 239820.01
+        }
+      ]
+    }
+  ]
+}

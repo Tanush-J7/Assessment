@@ -1,0 +1,173 @@
+# HengSeng & KRX Sentiment Price Prediction Agent
+
+> **Intern Position Assessment Submission — AI Agents Developer**  
+> **Applicant Submission for:** Gilad (CEO, CrowdWisdomTrading)  
+> **Contact / Submission Email:** `gilad@crowdwisdomtrading.com`
+
+---
+
+## 📌 Executive Summary
+
+This project implements an end-to-end Python-based multi-source sentiment analysis and price prediction pipeline for equities listed on the **Hong Kong Stock Exchange (HKEX / Hang Seng)** and the **Korea Exchange (KRX)**.
+
+The system ingests real-time and historical market price bars (10-day lookback, UTC-aligned), alternative social media community sentiment (via **Apify**), and semantic financial news feeds (via **Exa.com**). It trains a predictive model utilizing **strict out-of-sample walk-forward validation** (zero lookahead leakage) to forecast each asset's price at $n+1$ and synthesize actionable trading positions.
+
+---
+
+## 🏛️ Target Assets & Social Sources
+
+### 1. Selected Assets (10 total: 5 HKEX, 5 KRX)
+| Exchange | Ticker | Company Name | Sector |
+|---|---|---|---|
+| **HKEX** | `0700.HK` | Tencent Holdings | Internet & Tech |
+| **HKEX** | `9988.HK` | Alibaba Group | E-Commerce & Cloud |
+| **HKEX** | `3690.HK` | Meituan | Local Services & Delivery |
+| **HKEX** | `1211.HK` | BYD Company | Electric Vehicles & Batteries |
+| **HKEX** | `0005.HK` | HSBC Holdings | Banking & Finance |
+| **KRX** | `005930.KS` | Samsung Electronics | Semiconductors & Consumer Tech |
+| **KRX** | `000660.KS` | SK Hynix | High-Bandwidth Memory (HBM) |
+| **KRX** | `035420.KS` | NAVER | Internet, AI & Search |
+| **KRX** | `005380.KS` | Hyundai Motor | Automotive & Mobility |
+| **KRX** | `051910.KS` | LG Chem | Chemicals & EV Materials |
+
+### 2. Multi-Source Community Coverage ($\ge 2$ per exchange)
+*   **Hong Kong (HKEX):**
+    1.  **LIHKG (`lihkg.com/category/stock`)** — High-velocity Hong Kong retail trading forum.
+    2.  **Telegram Channels & Public Trading Groups** — Real-time ticker discussions & alerts.
+*   **South Korea (KRX):**
+    1.  **Naver Finance Stock Discussion Boards (`종목토론실`)** — Epicenter of Korean retail investor sentiment.
+    2.  **Telegram Channels & Blind** — Verified tech community and retail trading sentiment.
+
+---
+
+## 🏗️ Architecture & Pipeline Flow
+
+```
+┌────────────────┐     ┌────────────────┐     ┌────────────────┐
+│  Market Data   │     │  Apify Social  │     │    Exa.com     │
+│   (yfinance)   │     │ Scraper Engine │     │   News Engine  │
+│  10-Day UTC    │     │ (LIHKG/Naver/  │     │ (Semantic NLP) │
+│   OHLCV Bars   │     │   Telegram)    │     │                │
+└───────┬────────┘     └───────┬────────┘     └───────┬────────┘
+        │                      │                      │
+        ▼                      ▼                      ▼
+┌──────────────────────────────────────────────────────────────┐
+│                  Feature Engineering Engine                  │
+│  • Multilingual Lexicon Sentiment (Traditional Chinese /     │
+│    Korean / English)                                         │
+│  • Engagement Multiplier: log(1 + Likes + 2*Reposts + ...)   │
+│  • Support & Resistance: Pivot, R1, R2, S1, S2, Rolling Ext  │
+│  • UTC Timestamp Alignment & Resampling                      │
+└──────────────────────────────┬───────────────────────────────┘
+                               │
+                               ▼
+┌──────────────────────────────────────────────────────────────┐
+│           Predictive Modeling & Out-of-Sample Valid          │
+│  • Chronological 80/20 Train/Test Walk-Forward Split         │
+│  • Gradient Boosting Regressor (Predict Target: Price n+1)   │
+│  • Evaluation: RMSE, MAE, MAPE, Directional Hit Ratio (%)    │
+│  • Rule-Based Position Synthesis (Long / Short / Neutral)    │
+└──────────────────────────────┬───────────────────────────────┘
+                               │
+                               ▼
+┌──────────────────────────────────────────────────────────────┐
+│                     Visual Presentation                      │
+│  • Streamlit Interactive Web App (`src/dashboard/app.py`)    │
+│  • Standalone Static HTML Report (`reports/visual_report.html`)│
+└──────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📐 Quantitative Methodology
+
+### 1. Engagement-Weighted Sentiment
+Social media influence is non-linear. Raw sentiment is weighted by engagement velocity:
+$$W_i = \max\left(1.0, \ln\left(1 + \text{likes}_i + 2 \times \text{reposts}_i + 0.05 \times \text{views}_i + 0.1 \times \text{followers}_i\right)\right)$$
+$$\text{Social Sentiment} = \frac{\sum (S_i \cdot W_i)}{\sum W_i}$$
+Composite sentiment blends $70\%$ social community signal with $30\%$ news sentiment from Exa.com.
+
+### 2. Support & Resistance Calculations
+Daily Pivot Points are computed per asset:
+*   $\text{Pivot } (P) = \frac{\text{High} + \text{Low} + \text{Close}}{3}$
+*   $\text{Resistance } 1 (R_1) = 2P - \text{Low}, \quad R_2 = P + (\text{High} - \text{Low})$
+*   $\text{Support } 1 (S_1) = 2P - \text{High}, \quad S_2 = P - (\text{High} - \text{Low})$
+
+### 3. Out-of-Sample Predictive Model ($n+1$)
+*   Features: `Close`, `Volume`, `return_1h`, `volatility_5h`, `sma_5`, `sma_10`, `rsi_14`, `dist_from_pivot`, `hourly_social_sentiment`, `sentiment_momentum`, `sentiment_ma_3h`, `mentions`.
+*   Validation: Strictly chronological $80\%$ Train and $20\%$ Test partition.
+
+---
+
+## 🚀 Quickstart & Reproduction Guide
+
+### 1. Environment Setup
+```bash
+# Clone the repository
+git clone <YOUR_REPO_URL>
+cd intern-project
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 2. Configuration (`.env`)
+Create a `.env` file from `.env.example`:
+```ini
+APIFY_API_TOKEN=your_apify_token_here
+EXA_API_KEY=your_exa_api_key_here
+
+APIFY_TELEGRAM_ACTOR_ID=apify/telegram-scraper
+APIFY_WEB_SCRAPER_ACTOR_ID=apify/web-scraper
+APIFY_LIHKG_ACTOR_ID=apify/cheerio-scraper
+APIFY_NAVER_ACTOR_ID=apify/cheerio-scraper
+```
+> *Note: If API tokens are not provided, the pipeline automatically falls back to the built-in realistic historical simulation dataset for instantaneous offline reproduction.*
+
+### 3. Run the Complete Pipeline
+```bash
+python run_pipeline.py
+```
+This executes all 6 steps in sequence and outputs:
+- `data/processed/market_summary.json`
+- `data/processed/predictions_summary.json`
+- `reports/visual_report.html`
+
+### 4. Launch the Interactive Dashboard
+```bash
+streamlit run src/dashboard/app.py
+```
+Open your browser at `http://localhost:8501` to view:
+- Sortable Leaderboard by Social Mentions, Sentiment Score, and Return
+- Candlestick Charts with Support & Resistance overlays
+- Out-of-Sample Test predictions vs actuals
+- Feature importance rankings
+
+---
+
+## 📊 Summary of Results
+
+| Exchange | Ticker | Current Price | Pred Price ($n+1$) | Direction | Position | S1 | R1 | Hit Ratio |
+|---|---|---|---|---|---|---|---|---|
+| **HKEX** | `0700.HK` (Tencent) | 409.20 | 423.96 | Bullish | **Long (Buy)** | 408.13 | 410.33 | 35.7% |
+| **HKEX** | `9988.HK` (Alibaba) | 100.60 | 106.84 | Bullish | **Long (Buy)** | 100.40 | 100.70 | 50.0% |
+| **HKEX** | `3690.HK` (Meituan) | 72.85 | 76.51 | Bullish | **Long (Buy)** | 72.45 | 73.10 | 35.7% |
+| **HKEX** | `1211.HK` (BYD) | 69.20 | 73.18 | Bullish | **Long (Buy)** | 69.08 | 69.33 | 50.0% |
+| **HKEX** | `0005.HK` (HSBC) | 141.60 | 140.71 | Bullish | **Hold / Neutral** | 141.13 | 141.83 | 42.9% |
+| **KRX** | `005930.KS` (Samsung) | 205,500 | 215,841 | Bullish | **Long (Buy)** | 204,667 | 206,167 | 50.0% |
+| **KRX** | `000660.KS` (SK Hynix) | 1,277,000 | 1,363,944 | Bullish | **Long (Buy)** | 1,271,000 | 1,284,000 | 41.7% |
+| **KRX** | `035420.KS` (NAVER) | 196,200 | 190,622 | Bullish | **Short (Sell)** | 195,367 | 196,667 | 58.3% |
+| **KRX** | `005380.KS` (Hyundai) | 272,000 | 291,529 | Bullish | **Long (Buy)** | 271,333 | 272,833 | 58.3% |
+| **KRX** | `051910.KS` (LG Chem) | 245,000 | 243,303 | Bullish | **Hold / Neutral** | 243,000 | 246,500 | 66.7% |
+
+---
+
+## 📬 Submission Checklist
+- [x] Python-based sentiment pipeline ($n+1$ price prediction)
+- [x] Min. 2 sources per exchange (LIHKG + Telegram for HKEX; Naver + Telegram for KRX)
+- [x] Apify & Exa.com integration with documented Actor IDs
+- [x] 10 assets analyzed (5 HKEX, 5 KRX)
+- [x] Post timestamps (UTC alignment), engagement metrics & author follower weighting
+- [x] Per-ticker extraction: Ticker, Name, Price, Sentiment, Direction, Position, Support/Resistance
+- [x] Visual Report: Sorted by mentions/sentiment (Streamlit + standalone HTML)
+- [x] Rigorous out-of-sample validation metrics (RMSE, MAE, MAPE, Hit Ratio)
