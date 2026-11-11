@@ -122,7 +122,7 @@ def main():
         return "background-color: #e2e3e5; color: #383d41;"
 
     styled_df = df_display.style.map(highlight_direction, subset=["Direction"])
-    st.dataframe(styled_df, use_container_width=True)
+    st.dataframe(styled_df, width="stretch")
 
     st.divider()
 
@@ -172,7 +172,7 @@ def main():
                 height=480,
                 xaxis_rangeslider_visible=False
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         else:
             st.info("Price history file not found.")
 
@@ -196,7 +196,7 @@ def main():
                 yaxis_title="Price",
                 height=380
             )
-            st.plotly_chart(fig_val, use_container_width=True)
+            st.plotly_chart(fig_val, width="stretch")
 
     with tab3:
         st.write("#### Feature Importance (Impact on Prediction)")
@@ -204,7 +204,7 @@ def main():
         if importances:
             df_imp = pd.DataFrame(list(importances.items()), columns=["Feature", "Importance"]).sort_values("Importance", ascending=True)
             fig_imp = px.bar(df_imp, x="Importance", y="Feature", orientation="h", title="Feature Importance Breakdown")
-            st.plotly_chart(fig_imp, use_container_width=True)
+            st.plotly_chart(fig_imp, width="stretch")
 
         st.write("#### Recent Exa.com News Headlines")
         news_file = RAW_DATA_DIR / "news" / f"{selected_ticker.replace('.', '_')}_news.json"
