@@ -104,8 +104,8 @@ Daily Pivot Points are computed per asset:
 ### 1. Environment Setup
 ```bash
 # Clone the repository
-git clone <YOUR_REPO_URL>
-cd intern-project
+git clone https://github.com/Tanush-J7/Assessment.git
+cd Assessment
 
 # Install dependencies
 pip install -r requirements.txt
