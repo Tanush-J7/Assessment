@@ -10,7 +10,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "143105",
@@ -23,7 +25,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "143104",
@@ -36,7 +40,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "142703",
@@ -49,7 +55,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "142345",
@@ -62,7 +70,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "142166",
@@ -75,7 +85,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "141958",
@@ -88,7 +100,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "141183",
@@ -101,7 +115,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "140847",
@@ -114,7 +130,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "140619",
@@ -127,7 +145,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "140130",
@@ -140,7 +160,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "35321",
@@ -153,7 +175,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "35315",
@@ -166,7 +190,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "35275",
@@ -179,7 +205,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "56943",
@@ -192,7 +220,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "133764",
@@ -205,7 +235,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "133465",
@@ -218,7 +250,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "133327",
@@ -231,7 +265,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "133313",
@@ -244,7 +280,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "133312",
@@ -257,6 +295,8 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   }
 ]

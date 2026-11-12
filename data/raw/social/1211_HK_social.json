@@ -10,7 +10,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "32359",
@@ -23,7 +25,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "283713",
@@ -36,7 +40,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "212675",
@@ -49,7 +55,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "37252",
@@ -62,7 +70,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "37190",
@@ -75,7 +85,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "174888",
@@ -88,7 +100,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "62085",
@@ -101,6 +115,8 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   }
 ]

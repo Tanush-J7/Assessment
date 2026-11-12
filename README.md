@@ -160,16 +160,21 @@ Open your browser at `http://localhost:8501` to view:
 
 | Exchange | Ticker | Current Price | Pred Price ($n+1$) | Direction | Position | Model RMSE | Base RMSE | Hit Ratio |
 |---|---|---|---|---|---|---|---|---|
-| **HKEX** | `0700.HK` (Tencent) | 400.00 | 400.91 | Bullish | **Long (Buy)** | 3.159 | 2.625 | 28.6% |
-| **HKEX** | `9988.HK` (Alibaba) | 94.00 | 93.45 | Bullish | **Short (Sell)** | **1.042** | **1.118** | **78.6%** |
-| **HKEX** | `3690.HK` (Meituan) | 72.00 | 72.04 | Neutral | **Hold / Neutral** | 0.709 | 0.667 | 42.9% |
-| **HKEX** | `1211.HK` (BYD) | 67.60 | 67.60 | Bullish | **Hold / Neutral** | 0.709 | 0.663 | 28.6% |
-| **HKEX** | `0005.HK` (HSBC) | 141.10 | 141.24 | Bullish | **Hold / Neutral** | 1.187 | 0.634 | 35.7% |
-| **KRX** | `005930.KS` (Samsung) | 208,500 | 211,040 | Bullish | **Long (Buy)** | 3,802 | 2,142 | 16.7% |
-| **KRX** | `000660.KS` (SK Hynix) | 1,267,000 | 1,224,501 | Neutral | **Short (Sell)** | 23,837 | 12,373 | 33.3% |
-| **KRX** | `035420.KS` (NAVER) | 181,900 | 183,607 | Bullish | **Long (Buy)** | 4,778 | 3,380 | 25.0% |
-| **KRX** | `005380.KS` (Hyundai) | 265,500 | 265,378 | Neutral | **Hold / Neutral** | 1,415 | 1,411 | 58.3% |
-| **KRX** | `051910.KS` (LG Chem) | 235,500 | 233,194 | Neutral | **Short (Sell)** | 3,301 | 2,250 | 50.0% |
+| **HKEX** | `0700.HK` (Tencent) | 400.00 | 400.90 | Neutral | **Long (Buy)** | 3.155 | 2.625 | 28.6% |
+| **HKEX** | `9988.HK` (Alibaba) | 94.00 | 93.57 | Neutral | **Short (Sell)** | **1.038** | **1.118** | **78.6%** |
+| **HKEX** | `3690.HK` (Meituan) | 72.00 | 72.04 | Neutral | **Hold / Neutral** | 0.708 | 0.667 | 42.9% |
+| **HKEX** | `1211.HK` (BYD) | 67.60 | 67.22 | Bullish | **Short (Sell)** | 0.734 | 0.663 | 50.0% |
+| **HKEX** | `0005.HK` (HSBC) | 141.10 | 141.11 | Neutral | **Hold / Neutral** | 1.184 | 0.634 | 50.0% |
+| **KRX** | `005930.KS` (Samsung) | 208,500.00 | 208,944.41 | Bullish | **Long (Buy)** | **2,033.779** | **2,142.331** | 33.3% |
+| **KRX** | `000660.KS` (SK Hynix) | 1,267,000.00 | 1,248,330.24 | Bullish | **Short (Sell)** | 20,177.107 | 12,372.685 | 41.7% |
+| **KRX** | `035420.KS` (NAVER) | 181,900.00 | 183,669.87 | Neutral | **Long (Buy)** | 4,578.498 | 3,379.811 | 25.0% |
+| **KRX** | `005380.KS` (Hyundai) | 265,500.00 | 266,066.63 | Neutral | **Long (Buy)** | 1,511.304 | 1,410.526 | 66.7% |
+| **KRX** | `051910.KS` (LG Chem) | 235,500.00 | 234,283.76 | Neutral | **Short (Sell)** | 2,429.283 | 2,250.000 | 50.0% |
+
+### 📝 Live Ingestion & LG Chem Methodology Disclosure
+*   **Exa.com News:** 100% live semantic news articles ingested across all 10 target assets (8 articles per ticker, 80 total) within the 10-day lookback window.
+*   **Apify Social Media Scraping:** Dual-source live scraping executed via `lofomachines/telegram-keyword-search-scraper` (Telegram) and `apify/cheerio-scraper` (LIHKG for HKEX, Naver Finance 종목토론실 for KRX). 9 out of 10 assets contain 100% live scraped data across both platforms.
+*   **LG Chem (`051910.KS`) Disclosure:** Live Naver Finance 종목토론실 scraping succeeded via Cheerio (`apify/cheerio-scraper`). Telegram keyword search for Korean hashtag `#LG화학` encountered an Apify container timeout; the pipeline automatically supplemented representative Telegram data to ensure pipeline execution without failure. Raw JSON records on disk explicitly distinguish data provenance via `"data_type": "live"` (`"is_live": true`) vs `"data_type": "representative"` (`"is_live": false`).
 
 ---
 

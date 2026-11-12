@@ -10,7 +10,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "13155",
@@ -23,7 +25,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "433277",
@@ -36,6 +40,8 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   }
 ]

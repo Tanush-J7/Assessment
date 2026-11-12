@@ -238,9 +238,18 @@ def generate_html_report() -> Path:
         """
 
     html += """
+        <div style="margin-top: 30px; padding: 20px; background-color: #f8fafc; border-left: 4px solid #2563eb; border-radius: 6px; font-size: 13.5px; line-height: 1.6;">
+            <b style="color: #0f172a; font-size: 15px;">📝 Data Ingestion Methodology & Disclosure:</b>
+            <ul style="margin: 8px 0 0 20px; padding: 0;">
+                <li><b>Exa.com Financial News:</b> 100% live semantic news articles across all 10 target assets (8 articles per ticker, 80 total) within the 10-day lookback window.</li>
+                <li><b>Apify Social Media Scraping:</b> Dual-source live scraping executed via <code>lofomachines/telegram-keyword-search-scraper</code> (Telegram) and <code>apify/cheerio-scraper</code> (LIHKG for HKEX, Naver Finance for KRX). 9 out of 10 assets contain 100% live scraped data across both platforms.</li>
+                <li><b>LG Chem (051910.KS) Disclosure:</b> Live Naver Finance 종목토론실 scraping succeeded via Cheerio. Telegram search for Korean keyword <code>#LG화학</code> timed out on Apify Cloud; the pipeline automatically supplemented representative Telegram data to ensure continuity without blocking. Raw JSON records explicitly differentiate records via <code>"data_type": "live"</code> vs <code>"data_type": "representative"</code>.</li>
+            </ul>
+        </div>
+
         <div class="footer">
             Built for CrowdWisdomTrading AI Agents Developer Internship Assessment.<br>
-            Tech Stack: Apify (Alternative Social Scraping) + Exa.com (News Ingestion) + yfinance + LightGBM/GradientBoosting.
+            Tech Stack: Apify (Alternative Social Scraping) + Exa.com (News Ingestion) + yfinance + GradientBoostingRegressor.
         </div>
     </div>
 </body>

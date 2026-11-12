@@ -10,7 +10,9 @@
     "likes": 0,
     "reposts": 0,
     "views": 0,
-    "author_followers": 0
+    "author_followers": 0,
+    "data_type": "live",
+    "is_live": true
   },
   {
     "post_id": "apify_051910KS_012",
@@ -24,7 +26,9 @@
     "likes": 27,
     "reposts": 7,
     "views": 1085,
-    "author_followers": 210
+    "author_followers": 210,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_006",
@@ -38,7 +42,9 @@
     "likes": 25,
     "reposts": 3,
     "views": 925,
-    "author_followers": 157
+    "author_followers": 157,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_024",
@@ -52,7 +58,9 @@
     "likes": 71,
     "reposts": 19,
     "views": 2822,
-    "author_followers": 672
+    "author_followers": 672,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_030",
@@ -66,7 +74,9 @@
     "likes": 77,
     "reposts": 23,
     "views": 2788,
-    "author_followers": 1553
+    "author_followers": 1553,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_002",
@@ -80,7 +90,9 @@
     "likes": 13,
     "reposts": 1,
     "views": 471,
-    "author_followers": 80
+    "author_followers": 80,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_001",
@@ -94,7 +106,9 @@
     "likes": 13,
     "reposts": 1,
     "views": 497,
-    "author_followers": 84
+    "author_followers": 84,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_017",
@@ -108,7 +122,9 @@
     "likes": 15,
     "reposts": 5,
     "views": 581,
-    "author_followers": 335
+    "author_followers": 335,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_026",
@@ -122,7 +138,9 @@
     "likes": 10,
     "reposts": 1,
     "views": 380,
-    "author_followers": 104
+    "author_followers": 104,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_033",
@@ -136,7 +154,9 @@
     "likes": 26,
     "reposts": 7,
     "views": 967,
-    "author_followers": 342
+    "author_followers": 342,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_019",
@@ -150,7 +170,9 @@
     "likes": 20,
     "reposts": 5,
     "views": 740,
-    "author_followers": 261
+    "author_followers": 261,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_016",
@@ -164,7 +186,9 @@
     "likes": 39,
     "reposts": 14,
     "views": 2027,
-    "author_followers": 615
+    "author_followers": 615,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_028",
@@ -178,7 +202,9 @@
     "likes": 11,
     "reposts": 2,
     "views": 401,
-    "author_followers": 64
+    "author_followers": 64,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_014",
@@ -192,7 +218,9 @@
     "likes": 34,
     "reposts": 11,
     "views": 1307,
-    "author_followers": 755
+    "author_followers": 755,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_000",
@@ -206,7 +234,9 @@
     "likes": 41,
     "reposts": 8,
     "views": 1710,
-    "author_followers": 333
+    "author_followers": 333,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_018",
@@ -220,7 +250,9 @@
     "likes": 38,
     "reposts": 11,
     "views": 1365,
-    "author_followers": 760
+    "author_followers": 760,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_013",
@@ -234,7 +266,9 @@
     "likes": 43,
     "reposts": 13,
     "views": 1544,
-    "author_followers": 860
+    "author_followers": 860,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_023",
@@ -248,7 +282,9 @@
     "likes": 22,
     "reposts": 4,
     "views": 812,
-    "author_followers": 223
+    "author_followers": 223,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_021",
@@ -262,7 +298,9 @@
     "likes": 68,
     "reposts": 18,
     "views": 2900,
-    "author_followers": 761
+    "author_followers": 761,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_032",
@@ -276,7 +314,9 @@
     "likes": 7,
     "reposts": 1,
     "views": 273,
-    "author_followers": 75
+    "author_followers": 75,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_005",
@@ -290,7 +330,9 @@
     "likes": 52,
     "reposts": 17,
     "views": 1970,
-    "author_followers": 1138
+    "author_followers": 1138,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_031",
@@ -304,7 +346,9 @@
     "likes": 12,
     "reposts": 1,
     "views": 457,
-    "author_followers": 77
+    "author_followers": 77,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_011",
@@ -318,7 +362,9 @@
     "likes": 31,
     "reposts": 8,
     "views": 1251,
-    "author_followers": 298
+    "author_followers": 298,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_008",
@@ -332,7 +378,9 @@
     "likes": 25,
     "reposts": 8,
     "views": 951,
-    "author_followers": 550
+    "author_followers": 550,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_025",
@@ -346,7 +394,9 @@
     "likes": 39,
     "reposts": 10,
     "views": 1429,
-    "author_followers": 505
+    "author_followers": 505,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_034",
@@ -360,7 +410,9 @@
     "likes": 12,
     "reposts": 2,
     "views": 509,
-    "author_followers": 99
+    "author_followers": 99,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_020",
@@ -374,7 +426,9 @@
     "likes": 30,
     "reposts": 8,
     "views": 1102,
-    "author_followers": 390
+    "author_followers": 390,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_022",
@@ -388,7 +442,9 @@
     "likes": 30,
     "reposts": 6,
     "views": 1233,
-    "author_followers": 240
+    "author_followers": 240,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_029",
@@ -402,7 +458,9 @@
     "likes": 12,
     "reposts": 2,
     "views": 521,
-    "author_followers": 101
+    "author_followers": 101,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_007",
@@ -416,7 +474,9 @@
     "likes": 50,
     "reposts": 15,
     "views": 1816,
-    "author_followers": 1012
+    "author_followers": 1012,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_010",
@@ -430,7 +490,9 @@
     "likes": 31,
     "reposts": 5,
     "views": 1091,
-    "author_followers": 175
+    "author_followers": 175,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_003",
@@ -444,7 +506,9 @@
     "likes": 20,
     "reposts": 6,
     "views": 753,
-    "author_followers": 435
+    "author_followers": 435,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_004",
@@ -458,7 +522,9 @@
     "likes": 34,
     "reposts": 6,
     "views": 1429,
-    "author_followers": 279
+    "author_followers": 279,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_027",
@@ -472,7 +538,9 @@
     "likes": 19,
     "reposts": 5,
     "views": 695,
-    "author_followers": 246
+    "author_followers": 246,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_009",
@@ -486,7 +554,9 @@
     "likes": 22,
     "reposts": 4,
     "views": 801,
-    "author_followers": 220
+    "author_followers": 220,
+    "data_type": "representative",
+    "is_live": false
   },
   {
     "post_id": "apify_051910KS_015",
@@ -500,6 +570,8 @@
     "likes": 38,
     "reposts": 10,
     "views": 1385,
-    "author_followers": 490
+    "author_followers": 490,
+    "data_type": "representative",
+    "is_live": false
   }
 ]
