@@ -125,12 +125,16 @@ def run_apify_actor(actor_id: str, run_input: Dict[str, Any]) -> Tuple[List[Dict
         from apify_client import ApifyClient
         client = ApifyClient(APIFY_API_TOKEN)
         print(f"[Apify] Calling Actor [{actor_id}] with validated payload keys: {list(run_input.keys())}...")
-        actor_call = client.actor(actor_id).call(run_input=run_input, timeout_secs=120)
+        actor_call = client.actor(actor_id).call(run_input=run_input)
         
-        if not actor_call or "defaultDatasetId" not in actor_call:
+        if not actor_call:
+            return [], "FAILED_NO_RUN"
+
+        dataset_id = getattr(actor_call, "default_dataset_id", None) or (actor_call.get("defaultDatasetId") if isinstance(actor_call, dict) else None)
+        if not dataset_id:
             return [], "FAILED_NO_DATASET"
 
-        dataset_items = client.dataset(actor_call["defaultDatasetId"]).list_items().items
+        dataset_items = client.dataset(dataset_id).list_items().items
         print(f"[Apify] Success: Actor [{actor_id}] returned {len(dataset_items)} items.")
         return dataset_items, "SUCCESS"
     except Exception as e:
@@ -179,8 +183,8 @@ def scrape_social_posts(ticker: str, asset_name: str, exchange: str, days: int =
     """
     posts: List[Dict[str, Any]] = []
     sources = SOCIAL_SOURCES.get(exchange, ["telegram"])
+    successful_sources = set()
     live_scraping_attempted = False
-    live_scraping_succeeded = False
 
     # Attempt Apify live scraping if configured
     if APIFY_API_TOKEN and APIFY_API_TOKEN != "your_apify_token_here":
@@ -193,15 +197,17 @@ def scrape_social_posts(ticker: str, asset_name: str, exchange: str, days: int =
             raw_items, status = run_apify_actor(actor_id=actor_id, run_input=payload)
 
             if status == "SUCCESS" and raw_items:
-                live_scraping_succeeded = True
+                successful_sources.add(source)
                 for item in raw_items:
                     posts.append(normalize_social_post(item, ticker, asset_name, exchange, source))
 
-    # If live scraping not configured or produced no records, use offline representative dataset
-    if not posts:
-        if live_scraping_attempted and not live_scraping_succeeded:
-            print(f"[Notice] Live Apify scraping returned 0 items for {ticker}. Engaging reproducible offline generator.")
-        posts = generate_representative_social_posts(ticker, asset_name, exchange, sources, days=days)
+    # If some or all sources were not scraped live, supplement with representative dataset
+    missing_sources = [s for s in sources if s not in successful_sources]
+    if missing_sources:
+        if live_scraping_attempted:
+            print(f"[Notice] Supplementing representative data for {missing_sources} on {ticker} (Live scraped: {list(successful_sources)}).")
+        supplemental = generate_representative_social_posts(ticker, asset_name, exchange, missing_sources, days=days)
+        posts.extend(supplemental)
 
     # Deduplicate before saving
     posts = deduplicate_posts(posts)

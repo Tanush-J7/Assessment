@@ -34,7 +34,6 @@ def fetch_news_via_exa(ticker: str, asset_name: str, exchange: str, days: int = 
             query=query,
             num_results=8,
             start_published_date=start_date,
-            use_autoprompt=True,
             text=True
         )
         

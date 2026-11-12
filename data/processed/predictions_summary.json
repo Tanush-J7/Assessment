@@ -5,12 +5,12 @@
       "asset_name": "Tencent Holdings",
       "exchange": "HKEX",
       "current_price": 400.0,
-      "predicted_price_n1": 400.91,
-      "predicted_change_pct": 0.23,
-      "sentiment_score": 0.392,
+      "predicted_price_n1": 400.61,
+      "predicted_change_pct": 0.15,
+      "sentiment_score": 0.25,
       "sentiment_direction": "Bullish",
-      "social_mentions": 35,
-      "recommended_position": "Long (Buy)",
+      "social_mentions": 37,
+      "recommended_position": "Hold / Neutral",
       "sr_levels": {
         "pivot_point": 398.2,
         "resistance_1": 400.6,
@@ -22,15 +22,15 @@
       },
       "validation_metrics": {
         "test_samples": 14,
-        "model_rmse": 3.159,
+        "model_rmse": 3.203,
         "baseline_rmse": 2.625,
-        "model_mae": 2.177,
+        "model_mae": 2.211,
         "baseline_mae": 1.786,
         "model_mape_pct": 0.54,
         "baseline_mape_pct": 0.44,
-        "directional_accuracy_pct": 28.6,
-        "rmse": 3.159,
-        "mae": 2.177,
+        "directional_accuracy_pct": 21.4,
+        "rmse": 3.203,
+        "mae": 2.211,
         "mape_pct": 0.54
       },
       "walk_forward_cv": {
@@ -39,7 +39,7 @@
             "fold": 1,
             "train_samples": 18,
             "test_samples": 17,
-            "model_rmse": 5.428,
+            "model_rmse": 5.462,
             "baseline_rmse": 5.825,
             "directional_accuracy_pct": 64.7
           },
@@ -55,32 +55,32 @@
             "fold": 3,
             "train_samples": 52,
             "test_samples": 17,
-            "model_rmse": 3.181,
+            "model_rmse": 3.178,
             "baseline_rmse": 2.4,
             "directional_accuracy_pct": 29.4
           }
         ],
-        "mean_model_rmse": 3.947,
+        "mean_model_rmse": 3.957,
         "mean_baseline_rmse": 3.245,
         "mean_hit_ratio_pct": 45.1
       },
       "feature_contributions": {
-        "technical_pct": 99.9,
-        "social_sentiment_pct": 0.1,
+        "technical_pct": 98.4,
+        "social_sentiment_pct": 1.6,
         "news_sentiment_pct": 0.0
       },
       "feature_importances": {
-        "Volume": 0.863,
-        "rsi_14": 0.0533,
-        "volatility_5h": 0.048,
-        "dist_from_pivot": 0.0092,
-        "dist_from_sma_5": 0.0091,
-        "return_1h": 0.0089,
-        "dist_from_sma_10": 0.0071,
-        "sentiment_ma_3h": 0.0015,
+        "Volume": 0.8605,
+        "rsi_14": 0.0525,
+        "volatility_5h": 0.0511,
+        "mentions": 0.0164,
+        "dist_from_pivot": 0.008,
+        "return_1h": 0.0074,
+        "dist_from_sma_10": 0.0041,
+        "dist_from_sma_5": 0.0,
         "hourly_social_sentiment": 0.0,
         "sentiment_momentum": 0.0,
-        "mentions": 0.0,
+        "sentiment_ma_3h": 0.0,
         "news_sentiment": 0.0,
         "news_positive_count": 0.0,
         "news_negative_count": 0.0,
@@ -90,42 +90,42 @@
       "test_actual_vs_pred": [
         {
           "actual": 409.6,
-          "predicted": 409.61,
+          "predicted": 409.05,
           "baseline": 409.2
         },
         {
           "actual": 403.0,
-          "predicted": 410.8,
+          "predicted": 410.99,
           "baseline": 409.6
         },
         {
           "actual": 404.2,
-          "predicted": 403.91,
+          "predicted": 403.96,
           "baseline": 403.0
         },
         {
           "actual": 403.6,
-          "predicted": 404.8,
+          "predicted": 404.74,
           "baseline": 404.2
         },
         {
           "actual": 404.6,
-          "predicted": 404.04,
+          "predicted": 403.93,
           "baseline": 403.6
         },
         {
           "actual": 404.0,
-          "predicted": 404.91,
+          "predicted": 404.99,
           "baseline": 404.6
         },
         {
           "actual": 400.0,
-          "predicted": 404.26,
+          "predicted": 404.33,
           "baseline": 404.0
         },
         {
           "actual": 398.8,
-          "predicted": 400.91,
+          "predicted": 400.61,
           "baseline": 400.0
         }
       ]
@@ -137,9 +137,9 @@
       "current_price": 94.0,
       "predicted_price_n1": 93.45,
       "predicted_change_pct": -0.58,
-      "sentiment_score": 0.327,
+      "sentiment_score": 0.199,
       "sentiment_direction": "Bullish",
-      "social_mentions": 35,
+      "social_mentions": 71,
       "recommended_position": "Short (Sell)",
       "sr_levels": {
         "pivot_point": 93.82,
@@ -152,16 +152,16 @@
       },
       "validation_metrics": {
         "test_samples": 14,
-        "model_rmse": 1.042,
+        "model_rmse": 1.055,
         "baseline_rmse": 1.118,
-        "model_mae": 0.651,
+        "model_mae": 0.674,
         "baseline_mae": 0.614,
-        "model_mape_pct": 0.67,
+        "model_mape_pct": 0.69,
         "baseline_mape_pct": 0.63,
         "directional_accuracy_pct": 78.6,
-        "rmse": 1.042,
-        "mae": 0.651,
-        "mape_pct": 0.67
+        "rmse": 1.055,
+        "mae": 0.674,
+        "mape_pct": 0.69
       },
       "walk_forward_cv": {
         "folds": [
@@ -169,7 +169,7 @@
             "fold": 1,
             "train_samples": 18,
             "test_samples": 17,
-            "model_rmse": 2.166,
+            "model_rmse": 2.158,
             "baseline_rmse": 1.864,
             "directional_accuracy_pct": 47.1
           },
@@ -177,7 +177,7 @@
             "fold": 2,
             "train_samples": 35,
             "test_samples": 17,
-            "model_rmse": 1.261,
+            "model_rmse": 1.242,
             "baseline_rmse": 1.005,
             "directional_accuracy_pct": 47.1
           },
@@ -185,30 +185,30 @@
             "fold": 3,
             "train_samples": 52,
             "test_samples": 17,
-            "model_rmse": 0.882,
+            "model_rmse": 0.888,
             "baseline_rmse": 1.018,
             "directional_accuracy_pct": 70.6
           }
         ],
-        "mean_model_rmse": 1.436,
+        "mean_model_rmse": 1.429,
         "mean_baseline_rmse": 1.296,
         "mean_hit_ratio_pct": 54.9
       },
       "feature_contributions": {
-        "technical_pct": 100.0,
-        "social_sentiment_pct": 0.0,
+        "technical_pct": 99.0,
+        "social_sentiment_pct": 1.0,
         "news_sentiment_pct": 0.0
       },
       "feature_importances": {
-        "Volume": 0.7252,
-        "volatility_5h": 0.1192,
-        "rsi_14": 0.0767,
-        "dist_from_sma_10": 0.0298,
-        "dist_from_sma_5": 0.0188,
-        "return_1h": 0.0168,
-        "dist_from_pivot": 0.0131,
-        "hourly_social_sentiment": 0.0004,
-        "sentiment_momentum": 0.0,
+        "Volume": 0.7127,
+        "volatility_5h": 0.1233,
+        "rsi_14": 0.0751,
+        "dist_from_sma_10": 0.0321,
+        "dist_from_sma_5": 0.0245,
+        "dist_from_pivot": 0.0116,
+        "return_1h": 0.0104,
+        "hourly_social_sentiment": 0.0078,
+        "sentiment_momentum": 0.0026,
         "sentiment_ma_3h": 0.0,
         "mentions": 0.0,
         "news_sentiment": 0.0,
@@ -220,7 +220,7 @@
       "test_actual_vs_pred": [
         {
           "actual": 100.6,
-          "predicted": 100.13,
+          "predicted": 100.05,
           "baseline": 100.5
         },
         {
@@ -230,27 +230,27 @@
         },
         {
           "actual": 95.7,
-          "predicted": 96.48,
+          "predicted": 96.5,
           "baseline": 96.85
         },
         {
           "actual": 95.6,
-          "predicted": 95.22,
+          "predicted": 95.36,
           "baseline": 95.7
         },
         {
           "actual": 95.55,
-          "predicted": 95.28,
+          "predicted": 95.41,
           "baseline": 95.6
         },
         {
           "actual": 95.05,
-          "predicted": 95.37,
+          "predicted": 95.4,
           "baseline": 95.55
         },
         {
           "actual": 94.0,
-          "predicted": 94.8,
+          "predicted": 94.82,
           "baseline": 95.05
         },
         {
@@ -265,11 +265,11 @@
       "asset_name": "Meituan",
       "exchange": "HKEX",
       "current_price": 72.0,
-      "predicted_price_n1": 72.04,
-      "predicted_change_pct": 0.06,
-      "sentiment_score": 0.088,
+      "predicted_price_n1": 72.11,
+      "predicted_change_pct": 0.16,
+      "sentiment_score": 0.07,
       "sentiment_direction": "Neutral",
-      "social_mentions": 35,
+      "social_mentions": 37,
       "recommended_position": "Hold / Neutral",
       "sr_levels": {
         "pivot_point": 71.95,
@@ -282,16 +282,16 @@
       },
       "validation_metrics": {
         "test_samples": 14,
-        "model_rmse": 0.709,
+        "model_rmse": 0.701,
         "baseline_rmse": 0.667,
-        "model_mae": 0.52,
+        "model_mae": 0.51,
         "baseline_mae": 0.514,
-        "model_mape_pct": 0.72,
+        "model_mape_pct": 0.7,
         "baseline_mape_pct": 0.71,
         "directional_accuracy_pct": 42.9,
-        "rmse": 0.709,
-        "mae": 0.52,
-        "mape_pct": 0.72
+        "rmse": 0.701,
+        "mae": 0.51,
+        "mape_pct": 0.7
       },
       "walk_forward_cv": {
         "folds": [
@@ -299,7 +299,7 @@
             "fold": 1,
             "train_samples": 18,
             "test_samples": 17,
-            "model_rmse": 1.787,
+            "model_rmse": 1.795,
             "baseline_rmse": 1.782,
             "directional_accuracy_pct": 52.9
           },
@@ -315,29 +315,29 @@
             "fold": 3,
             "train_samples": 52,
             "test_samples": 17,
-            "model_rmse": 0.721,
+            "model_rmse": 0.718,
             "baseline_rmse": 0.643,
             "directional_accuracy_pct": 41.2
           }
         ],
-        "mean_model_rmse": 1.213,
+        "mean_model_rmse": 1.214,
         "mean_baseline_rmse": 1.142,
         "mean_hit_ratio_pct": 43.1
       },
       "feature_contributions": {
-        "technical_pct": 99.9,
-        "social_sentiment_pct": 0.1,
+        "technical_pct": 99.8,
+        "social_sentiment_pct": 0.2,
         "news_sentiment_pct": 0.0
       },
       "feature_importances": {
-        "Volume": 0.7872,
-        "volatility_5h": 0.0988,
-        "return_1h": 0.0416,
-        "rsi_14": 0.0369,
-        "dist_from_sma_5": 0.0141,
-        "dist_from_pivot": 0.0111,
-        "dist_from_sma_10": 0.0089,
-        "sentiment_ma_3h": 0.0014,
+        "Volume": 0.7852,
+        "volatility_5h": 0.1037,
+        "return_1h": 0.0403,
+        "rsi_14": 0.0355,
+        "dist_from_pivot": 0.0152,
+        "dist_from_sma_5": 0.0102,
+        "dist_from_sma_10": 0.0081,
+        "sentiment_ma_3h": 0.0017,
         "hourly_social_sentiment": 0.0,
         "sentiment_momentum": 0.0,
         "mentions": 0.0,
@@ -350,7 +350,7 @@
       "test_actual_vs_pred": [
         {
           "actual": 72.85,
-          "predicted": 72.89,
+          "predicted": 72.9,
           "baseline": 72.75
         },
         {
@@ -360,17 +360,17 @@
         },
         {
           "actual": 71.7,
-          "predicted": 71.47,
+          "predicted": 71.5,
           "baseline": 71.35
         },
         {
           "actual": 71.9,
-          "predicted": 71.68,
+          "predicted": 71.65,
           "baseline": 71.7
         },
         {
           "actual": 72.65,
-          "predicted": 71.81,
+          "predicted": 71.86,
           "baseline": 71.9
         },
         {
@@ -380,12 +380,12 @@
         },
         {
           "actual": 72.0,
-          "predicted": 72.5,
+          "predicted": 72.51,
           "baseline": 72.5
         },
         {
           "actual": 72.1,
-          "predicted": 72.04,
+          "predicted": 72.11,
           "baseline": 72.0
         }
       ]
@@ -395,12 +395,12 @@
       "asset_name": "BYD Company",
       "exchange": "HKEX",
       "current_price": 67.6,
-      "predicted_price_n1": 67.6,
-      "predicted_change_pct": 0.0,
-      "sentiment_score": 0.224,
+      "predicted_price_n1": 67.27,
+      "predicted_change_pct": -0.49,
+      "sentiment_score": 0.243,
       "sentiment_direction": "Bullish",
-      "social_mentions": 35,
-      "recommended_position": "Hold / Neutral",
+      "social_mentions": 40,
+      "recommended_position": "Short (Sell)",
       "sr_levels": {
         "pivot_point": 67.52,
         "resistance_1": 67.68,
@@ -412,16 +412,16 @@
       },
       "validation_metrics": {
         "test_samples": 14,
-        "model_rmse": 0.709,
+        "model_rmse": 0.721,
         "baseline_rmse": 0.663,
-        "model_mae": 0.428,
+        "model_mae": 0.455,
         "baseline_mae": 0.357,
-        "model_mape_pct": 0.62,
+        "model_mape_pct": 0.66,
         "baseline_mape_pct": 0.52,
-        "directional_accuracy_pct": 28.6,
-        "rmse": 0.709,
-        "mae": 0.428,
-        "mape_pct": 0.62
+        "directional_accuracy_pct": 35.7,
+        "rmse": 0.721,
+        "mae": 0.455,
+        "mape_pct": 0.66
       },
       "walk_forward_cv": {
         "folds": [
@@ -437,85 +437,85 @@
             "fold": 2,
             "train_samples": 35,
             "test_samples": 17,
-            "model_rmse": 0.813,
+            "model_rmse": 0.772,
             "baseline_rmse": 0.359,
-            "directional_accuracy_pct": 23.5
+            "directional_accuracy_pct": 35.3
           },
           {
             "fold": 3,
             "train_samples": 52,
             "test_samples": 17,
-            "model_rmse": 0.653,
+            "model_rmse": 0.652,
             "baseline_rmse": 0.612,
-            "directional_accuracy_pct": 23.5
+            "directional_accuracy_pct": 47.1
           }
         ],
-        "mean_model_rmse": 0.96,
+        "mean_model_rmse": 0.946,
         "mean_baseline_rmse": 0.702,
-        "mean_hit_ratio_pct": 35.3
+        "mean_hit_ratio_pct": 47.1
       },
       "feature_contributions": {
-        "technical_pct": 78.9,
-        "social_sentiment_pct": 21.1,
-        "news_sentiment_pct": 0.0
+        "technical_pct": 81.8,
+        "social_sentiment_pct": 5.8,
+        "news_sentiment_pct": 12.4
       },
       "feature_importances": {
-        "Volume": 0.5762,
-        "sentiment_momentum": 0.2052,
-        "volatility_5h": 0.0848,
-        "rsi_14": 0.0702,
-        "dist_from_sma_5": 0.0356,
-        "return_1h": 0.0131,
-        "dist_from_sma_10": 0.0088,
-        "sentiment_ma_3h": 0.006,
-        "dist_from_pivot": 0.0002,
-        "hourly_social_sentiment": 0.0,
+        "Volume": 0.5773,
+        "volatility_5h": 0.0863,
+        "rsi_14": 0.0821,
+        "news_article_count": 0.0639,
+        "hourly_social_sentiment": 0.0582,
+        "dist_from_sma_5": 0.0427,
+        "news_negative_count": 0.0309,
+        "news_sentiment": 0.0292,
+        "return_1h": 0.0203,
+        "dist_from_sma_10": 0.0055,
+        "dist_from_pivot": 0.0036,
+        "sentiment_momentum": 0.0,
+        "sentiment_ma_3h": 0.0,
         "mentions": 0.0,
-        "news_sentiment": 0.0,
         "news_positive_count": 0.0,
-        "news_negative_count": 0.0,
-        "news_article_count": 0.0,
         "news_sentiment_ma_6h": 0.0
       },
       "test_actual_vs_pred": [
         {
           "actual": 69.2,
-          "predicted": 69.36,
+          "predicted": 69.38,
           "baseline": 69.3
         },
         {
           "actual": 67.85,
-          "predicted": 69.34,
+          "predicted": 69.33,
           "baseline": 69.2
         },
         {
           "actual": 67.95,
-          "predicted": 67.93,
+          "predicted": 67.55,
           "baseline": 67.85
         },
         {
           "actual": 67.85,
-          "predicted": 68.02,
+          "predicted": 67.69,
           "baseline": 67.95
         },
         {
           "actual": 67.8,
-          "predicted": 68.12,
+          "predicted": 67.87,
           "baseline": 67.85
         },
         {
           "actual": 67.75,
-          "predicted": 67.91,
+          "predicted": 67.86,
           "baseline": 67.8
         },
         {
           "actual": 67.6,
-          "predicted": 67.8,
+          "predicted": 67.44,
           "baseline": 67.75
         },
         {
           "actual": 67.55,
-          "predicted": 67.6,
+          "predicted": 67.27,
           "baseline": 67.6
         }
       ]
@@ -525,11 +525,11 @@
       "asset_name": "HSBC Holdings",
       "exchange": "HKEX",
       "current_price": 141.1,
-      "predicted_price_n1": 141.24,
-      "predicted_change_pct": 0.1,
-      "sentiment_score": 0.237,
-      "sentiment_direction": "Bullish",
-      "social_mentions": 35,
+      "predicted_price_n1": 141.28,
+      "predicted_change_pct": 0.13,
+      "sentiment_score": 0.146,
+      "sentiment_direction": "Neutral",
+      "social_mentions": 36,
       "recommended_position": "Hold / Neutral",
       "sr_levels": {
         "pivot_point": 140.87,
@@ -542,16 +542,16 @@
       },
       "validation_metrics": {
         "test_samples": 14,
-        "model_rmse": 1.187,
+        "model_rmse": 1.202,
         "baseline_rmse": 0.634,
-        "model_mae": 0.667,
+        "model_mae": 0.69,
         "baseline_mae": 0.329,
-        "model_mape_pct": 0.47,
+        "model_mape_pct": 0.49,
         "baseline_mape_pct": 0.23,
         "directional_accuracy_pct": 35.7,
-        "rmse": 1.187,
-        "mae": 0.667,
-        "mape_pct": 0.47
+        "rmse": 1.202,
+        "mae": 0.69,
+        "mape_pct": 0.49
       },
       "walk_forward_cv": {
         "folds": [
@@ -559,7 +559,7 @@
             "fold": 1,
             "train_samples": 18,
             "test_samples": 17,
-            "model_rmse": 1.26,
+            "model_rmse": 1.257,
             "baseline_rmse": 1.265,
             "directional_accuracy_pct": 29.4
           },
@@ -567,7 +567,7 @@
             "fold": 2,
             "train_samples": 35,
             "test_samples": 17,
-            "model_rmse": 1.543,
+            "model_rmse": 1.613,
             "baseline_rmse": 1.094,
             "directional_accuracy_pct": 35.3
           },
@@ -575,32 +575,32 @@
             "fold": 3,
             "train_samples": 52,
             "test_samples": 17,
-            "model_rmse": 1.157,
+            "model_rmse": 1.096,
             "baseline_rmse": 0.661,
             "directional_accuracy_pct": 41.2
           }
         ],
-        "mean_model_rmse": 1.32,
+        "mean_model_rmse": 1.322,
         "mean_baseline_rmse": 1.007,
         "mean_hit_ratio_pct": 35.3
       },
       "feature_contributions": {
-        "technical_pct": 81.9,
-        "social_sentiment_pct": 18.1,
+        "technical_pct": 90.8,
+        "social_sentiment_pct": 9.2,
         "news_sentiment_pct": 0.0
       },
       "feature_importances": {
-        "Volume": 0.4297,
-        "dist_from_pivot": 0.1496,
-        "hourly_social_sentiment": 0.0976,
-        "rsi_14": 0.0851,
-        "sentiment_momentum": 0.051,
-        "return_1h": 0.0479,
-        "volatility_5h": 0.0433,
-        "dist_from_sma_5": 0.0343,
-        "mentions": 0.0322,
-        "dist_from_sma_10": 0.0292,
-        "sentiment_ma_3h": 0.0,
+        "Volume": 0.474,
+        "dist_from_pivot": 0.154,
+        "rsi_14": 0.1177,
+        "return_1h": 0.0612,
+        "volatility_5h": 0.0543,
+        "sentiment_momentum": 0.0492,
+        "hourly_social_sentiment": 0.0402,
+        "dist_from_sma_5": 0.0334,
+        "dist_from_sma_10": 0.0129,
+        "sentiment_ma_3h": 0.003,
+        "mentions": 0.0,
         "news_sentiment": 0.0,
         "news_positive_count": 0.0,
         "news_negative_count": 0.0,
@@ -610,42 +610,42 @@
       "test_actual_vs_pred": [
         {
           "actual": 141.6,
-          "predicted": 141.19,
+          "predicted": 141.15,
           "baseline": 141.2
         },
         {
           "actual": 141.1,
-          "predicted": 141.77,
+          "predicted": 141.63,
           "baseline": 141.6
         },
         {
           "actual": 141.0,
-          "predicted": 141.07,
+          "predicted": 141.77,
           "baseline": 141.1
         },
         {
           "actual": 141.0,
-          "predicted": 141.08,
+          "predicted": 141.27,
           "baseline": 141.0
         },
         {
           "actual": 140.9,
-          "predicted": 144.4,
+          "predicted": 144.52,
           "baseline": 141.0
         },
         {
           "actual": 141.1,
-          "predicted": 141.16,
+          "predicted": 141.17,
           "baseline": 140.9
         },
         {
           "actual": 141.1,
-          "predicted": 141.36,
+          "predicted": 141.28,
           "baseline": 141.1
         },
         {
           "actual": 140.7,
-          "predicted": 141.24,
+          "predicted": 141.28,
           "baseline": 141.1
         }
       ]
@@ -657,11 +657,11 @@
       "asset_name": "Samsung Electronics",
       "exchange": "KRX",
       "current_price": 208500.0,
-      "predicted_price_n1": 211040.29,
-      "predicted_change_pct": 1.22,
-      "sentiment_score": 0.26,
+      "predicted_price_n1": 209160.4,
+      "predicted_change_pct": 0.32,
+      "sentiment_score": 0.242,
       "sentiment_direction": "Bullish",
-      "social_mentions": 35,
+      "social_mentions": 83,
       "recommended_position": "Long (Buy)",
       "sr_levels": {
         "pivot_point": 207666.67,
@@ -674,16 +674,16 @@
       },
       "validation_metrics": {
         "test_samples": 12,
-        "model_rmse": 3802.187,
+        "model_rmse": 3169.118,
         "baseline_rmse": 2142.331,
-        "model_mae": 3166.284,
+        "model_mae": 2600.012,
         "baseline_mae": 1366.667,
-        "model_mape_pct": 1.53,
+        "model_mape_pct": 1.26,
         "baseline_mape_pct": 0.66,
-        "directional_accuracy_pct": 16.7,
-        "rmse": 3802.187,
-        "mae": 3166.284,
-        "mape_pct": 1.53
+        "directional_accuracy_pct": 33.3,
+        "rmse": 3169.118,
+        "mae": 2600.012,
+        "mape_pct": 1.26
       },
       "walk_forward_cv": {
         "folds": [
@@ -691,7 +691,7 @@
             "fold": 1,
             "train_samples": 17,
             "test_samples": 14,
-            "model_rmse": 6484.448,
+            "model_rmse": 6411.144,
             "baseline_rmse": 6470.648,
             "directional_accuracy_pct": 42.9
           },
@@ -699,40 +699,40 @@
             "fold": 2,
             "train_samples": 31,
             "test_samples": 14,
-            "model_rmse": 6095.252,
+            "model_rmse": 3508.286,
             "baseline_rmse": 3034.857,
-            "directional_accuracy_pct": 57.1
+            "directional_accuracy_pct": 50.0
           },
           {
             "fold": 3,
             "train_samples": 45,
             "test_samples": 14,
-            "model_rmse": 3441.976,
+            "model_rmse": 3682.129,
             "baseline_rmse": 2015.21,
-            "directional_accuracy_pct": 21.4
+            "directional_accuracy_pct": 42.9
           }
         ],
-        "mean_model_rmse": 5340.559,
+        "mean_model_rmse": 4533.853,
         "mean_baseline_rmse": 3840.238,
-        "mean_hit_ratio_pct": 40.5
+        "mean_hit_ratio_pct": 45.3
       },
       "feature_contributions": {
-        "technical_pct": 74.8,
-        "social_sentiment_pct": 25.2,
+        "technical_pct": 69.0,
+        "social_sentiment_pct": 31.0,
         "news_sentiment_pct": 0.0
       },
       "feature_importances": {
-        "dist_from_pivot": 0.2523,
-        "dist_from_sma_5": 0.2209,
-        "sentiment_ma_3h": 0.1202,
-        "hourly_social_sentiment": 0.0887,
-        "dist_from_sma_10": 0.0725,
-        "volatility_5h": 0.0655,
-        "Volume": 0.0631,
-        "return_1h": 0.0614,
-        "mentions": 0.0429,
-        "rsi_14": 0.0127,
-        "sentiment_momentum": 0.0,
+        "dist_from_pivot": 0.2279,
+        "dist_from_sma_5": 0.2044,
+        "sentiment_ma_3h": 0.1681,
+        "Volume": 0.0879,
+        "hourly_social_sentiment": 0.0708,
+        "mentions": 0.0686,
+        "volatility_5h": 0.0521,
+        "dist_from_sma_10": 0.0446,
+        "rsi_14": 0.0384,
+        "return_1h": 0.0349,
+        "sentiment_momentum": 0.0024,
         "news_sentiment": 0.0,
         "news_positive_count": 0.0,
         "news_negative_count": 0.0,
@@ -742,42 +742,42 @@
       "test_actual_vs_pred": [
         {
           "actual": 204750.0,
-          "predicted": 203462.96,
+          "predicted": 200361.29,
           "baseline": 205000.0
         },
         {
           "actual": 205500.0,
-          "predicted": 201882.34,
+          "predicted": 201048.26,
           "baseline": 204750.0
         },
         {
           "actual": 211750.0,
-          "predicted": 204368.8,
+          "predicted": 205375.92,
           "baseline": 205500.0
         },
         {
           "actual": 211750.0,
-          "predicted": 209605.0,
+          "predicted": 210449.34,
           "baseline": 211750.0
         },
         {
           "actual": 211750.0,
-          "predicted": 210834.03,
+          "predicted": 209895.3,
           "baseline": 211750.0
         },
         {
           "actual": 210000.0,
-          "predicted": 209298.75,
+          "predicted": 209333.76,
           "baseline": 211750.0
         },
         {
           "actual": 208500.0,
-          "predicted": 212627.9,
+          "predicted": 208380.07,
           "baseline": 210000.0
         },
         {
           "actual": 208000.0,
-          "predicted": 211040.29,
+          "predicted": 209160.4,
           "baseline": 208500.0
         }
       ]
@@ -787,11 +787,11 @@
       "asset_name": "SK Hynix",
       "exchange": "KRX",
       "current_price": 1267000.0,
-      "predicted_price_n1": 1224501.22,
-      "predicted_change_pct": -3.35,
-      "sentiment_score": 0.006,
-      "sentiment_direction": "Neutral",
-      "social_mentions": 35,
+      "predicted_price_n1": 1239983.55,
+      "predicted_change_pct": -2.13,
+      "sentiment_score": 0.28,
+      "sentiment_direction": "Bullish",
+      "social_mentions": 67,
       "recommended_position": "Short (Sell)",
       "sr_levels": {
         "pivot_point": 1257000.0,
@@ -804,16 +804,16 @@
       },
       "validation_metrics": {
         "test_samples": 12,
-        "model_rmse": 23836.799,
+        "model_rmse": 22415.509,
         "baseline_rmse": 12372.685,
-        "model_mae": 21717.993,
+        "model_mae": 19456.107,
         "baseline_mae": 9916.667,
-        "model_mape_pct": 1.71,
+        "model_mape_pct": 1.53,
         "baseline_mape_pct": 0.78,
         "directional_accuracy_pct": 33.3,
-        "rmse": 23836.799,
-        "mae": 21717.993,
-        "mape_pct": 1.71
+        "rmse": 22415.509,
+        "mae": 19456.107,
+        "mape_pct": 1.53
       },
       "walk_forward_cv": {
         "folds": [
@@ -821,7 +821,7 @@
             "fold": 1,
             "train_samples": 17,
             "test_samples": 14,
-            "model_rmse": 57765.06,
+            "model_rmse": 58504.191,
             "baseline_rmse": 55056.465,
             "directional_accuracy_pct": 35.7
           },
@@ -829,7 +829,7 @@
             "fold": 2,
             "train_samples": 31,
             "test_samples": 14,
-            "model_rmse": 30581.222,
+            "model_rmse": 31280.119,
             "baseline_rmse": 25116.87,
             "directional_accuracy_pct": 71.4
           },
@@ -837,31 +837,31 @@
             "fold": 3,
             "train_samples": 45,
             "test_samples": 14,
-            "model_rmse": 26011.431,
+            "model_rmse": 23682.429,
             "baseline_rmse": 12156.715,
-            "directional_accuracy_pct": 42.9
+            "directional_accuracy_pct": 35.7
           }
         ],
-        "mean_model_rmse": 38119.238,
+        "mean_model_rmse": 37822.246,
         "mean_baseline_rmse": 30776.683,
-        "mean_hit_ratio_pct": 50.0
+        "mean_hit_ratio_pct": 47.6
       },
       "feature_contributions": {
-        "technical_pct": 100.0,
-        "social_sentiment_pct": 0.0,
+        "technical_pct": 98.2,
+        "social_sentiment_pct": 1.8,
         "news_sentiment_pct": 0.0
       },
       "feature_importances": {
-        "dist_from_sma_5": 0.2606,
-        "volatility_5h": 0.2513,
-        "return_1h": 0.1957,
-        "Volume": 0.1282,
-        "rsi_14": 0.0795,
-        "dist_from_sma_10": 0.0532,
-        "dist_from_pivot": 0.0314,
+        "volatility_5h": 0.24,
+        "dist_from_sma_5": 0.2268,
+        "return_1h": 0.1563,
+        "dist_from_sma_10": 0.1404,
+        "Volume": 0.1291,
+        "rsi_14": 0.059,
+        "dist_from_pivot": 0.0303,
+        "sentiment_ma_3h": 0.018,
         "hourly_social_sentiment": 0.0,
         "sentiment_momentum": 0.0,
-        "sentiment_ma_3h": 0.0,
         "mentions": 0.0,
         "news_sentiment": 0.0,
         "news_positive_count": 0.0,
@@ -872,42 +872,42 @@
       "test_actual_vs_pred": [
         {
           "actual": 1275000.0,
-          "predicted": 1246571.05,
+          "predicted": 1251262.83,
           "baseline": 1275000.0
         },
         {
           "actual": 1277000.0,
-          "predicted": 1256348.19,
+          "predicted": 1256881.91,
           "baseline": 1275000.0
         },
         {
           "actual": 1282000.0,
-          "predicted": 1265450.15,
+          "predicted": 1262771.91,
           "baseline": 1277000.0
         },
         {
           "actual": 1289000.0,
-          "predicted": 1258190.35,
+          "predicted": 1252080.02,
           "baseline": 1282000.0
         },
         {
           "actual": 1297000.0,
-          "predicted": 1282182.93,
+          "predicted": 1284357.5,
           "baseline": 1289000.0
         },
         {
           "actual": 1286000.0,
-          "predicted": 1279644.94,
+          "predicted": 1287810.22,
           "baseline": 1297000.0
         },
         {
           "actual": 1267000.0,
-          "predicted": 1257707.23,
+          "predicted": 1265644.12,
           "baseline": 1286000.0
         },
         {
           "actual": 1255000.0,
-          "predicted": 1224501.22,
+          "predicted": 1239983.55,
           "baseline": 1267000.0
         }
       ]
@@ -917,11 +917,11 @@
       "asset_name": "NAVER",
       "exchange": "KRX",
       "current_price": 181900.0,
-      "predicted_price_n1": 183607.24,
-      "predicted_change_pct": 0.94,
-      "sentiment_score": 0.398,
-      "sentiment_direction": "Bullish",
-      "social_mentions": 35,
+      "predicted_price_n1": 183139.61,
+      "predicted_change_pct": 0.68,
+      "sentiment_score": -0.032,
+      "sentiment_direction": "Neutral",
+      "social_mentions": 104,
       "recommended_position": "Long (Buy)",
       "sr_levels": {
         "pivot_point": 181633.33,
@@ -934,16 +934,16 @@
       },
       "validation_metrics": {
         "test_samples": 12,
-        "model_rmse": 4778.215,
+        "model_rmse": 4462.223,
         "baseline_rmse": 3379.811,
-        "model_mae": 3541.189,
+        "model_mae": 3076.257,
         "baseline_mae": 1612.5,
-        "model_mape_pct": 1.9,
+        "model_mape_pct": 1.65,
         "baseline_mape_pct": 0.86,
         "directional_accuracy_pct": 25.0,
-        "rmse": 4778.215,
-        "mae": 3541.189,
-        "mape_pct": 1.9
+        "rmse": 4462.223,
+        "mae": 3076.257,
+        "mape_pct": 1.65
       },
       "walk_forward_cv": {
         "folds": [
@@ -951,7 +951,7 @@
             "fold": 1,
             "train_samples": 17,
             "test_samples": 14,
-            "model_rmse": 2423.189,
+            "model_rmse": 2464.945,
             "baseline_rmse": 2745.451,
             "directional_accuracy_pct": 57.1
           },
@@ -959,40 +959,40 @@
             "fold": 2,
             "train_samples": 31,
             "test_samples": 14,
-            "model_rmse": 3258.089,
+            "model_rmse": 3188.186,
             "baseline_rmse": 3029.498,
-            "directional_accuracy_pct": 57.1
+            "directional_accuracy_pct": 50.0
           },
           {
             "fold": 3,
             "train_samples": 45,
             "test_samples": 14,
-            "model_rmse": 4133.179,
+            "model_rmse": 3853.819,
             "baseline_rmse": 3134.03,
-            "directional_accuracy_pct": 21.4
+            "directional_accuracy_pct": 28.6
           }
         ],
-        "mean_model_rmse": 3271.486,
+        "mean_model_rmse": 3168.983,
         "mean_baseline_rmse": 2969.66,
         "mean_hit_ratio_pct": 45.2
       },
       "feature_contributions": {
-        "technical_pct": 97.2,
-        "social_sentiment_pct": 2.8,
+        "technical_pct": 90.2,
+        "social_sentiment_pct": 9.8,
         "news_sentiment_pct": 0.0
       },
       "feature_importances": {
-        "Volume": 0.2299,
-        "rsi_14": 0.2053,
-        "volatility_5h": 0.1519,
-        "dist_from_sma_10": 0.1284,
-        "dist_from_pivot": 0.1086,
-        "return_1h": 0.0999,
-        "dist_from_sma_5": 0.0481,
-        "sentiment_momentum": 0.0199,
-        "hourly_social_sentiment": 0.0078,
-        "sentiment_ma_3h": 0.0002,
-        "mentions": 0.0,
+        "Volume": 0.2127,
+        "rsi_14": 0.1898,
+        "dist_from_pivot": 0.1771,
+        "volatility_5h": 0.1675,
+        "dist_from_sma_10": 0.0726,
+        "sentiment_ma_3h": 0.0611,
+        "return_1h": 0.06,
+        "sentiment_momentum": 0.0305,
+        "dist_from_sma_5": 0.0223,
+        "mentions": 0.0063,
+        "hourly_social_sentiment": 0.0,
         "news_sentiment": 0.0,
         "news_positive_count": 0.0,
         "news_negative_count": 0.0,
@@ -1002,42 +1002,42 @@
       "test_actual_vs_pred": [
         {
           "actual": 195500.0,
-          "predicted": 194102.24,
+          "predicted": 193614.41,
           "baseline": 193500.0
         },
         {
           "actual": 196200.0,
-          "predicted": 199515.96,
+          "predicted": 197985.51,
           "baseline": 195500.0
         },
         {
           "actual": 185000.0,
-          "predicted": 198577.76,
+          "predicted": 198396.35,
           "baseline": 196200.0
         },
         {
           "actual": 182700.0,
-          "predicted": 186588.02,
+          "predicted": 186559.24,
           "baseline": 185000.0
         },
         {
           "actual": 182700.0,
-          "predicted": 184741.95,
+          "predicted": 184799.87,
           "baseline": 182700.0
         },
         {
           "actual": 182600.0,
-          "predicted": 186344.16,
+          "predicted": 185474.8,
           "baseline": 182700.0
         },
         {
           "actual": 181900.0,
-          "predicted": 185825.0,
+          "predicted": 184940.46,
           "baseline": 182600.0
         },
         {
           "actual": 181500.0,
-          "predicted": 183607.24,
+          "predicted": 183139.61,
           "baseline": 181900.0
         }
       ]
@@ -1047,9 +1047,9 @@
       "asset_name": "Hyundai Motor",
       "exchange": "KRX",
       "current_price": 265500.0,
-      "predicted_price_n1": 265378.41,
-      "predicted_change_pct": -0.05,
-      "sentiment_score": -0.068,
+      "predicted_price_n1": 265495.7,
+      "predicted_change_pct": -0.0,
+      "sentiment_score": 0.002,
       "sentiment_direction": "Neutral",
       "social_mentions": 35,
       "recommended_position": "Hold / Neutral",
@@ -1064,16 +1064,16 @@
       },
       "validation_metrics": {
         "test_samples": 12,
-        "model_rmse": 1415.265,
+        "model_rmse": 1403.75,
         "baseline_rmse": 1410.526,
-        "model_mae": 1193.272,
+        "model_mae": 1107.359,
         "baseline_mae": 1125.0,
-        "model_mape_pct": 0.44,
+        "model_mape_pct": 0.41,
         "baseline_mape_pct": 0.42,
         "directional_accuracy_pct": 58.3,
-        "rmse": 1415.265,
-        "mae": 1193.272,
-        "mape_pct": 0.44
+        "rmse": 1403.75,
+        "mae": 1107.359,
+        "mape_pct": 0.41
       },
       "walk_forward_cv": {
         "folds": [
@@ -1089,40 +1089,40 @@
             "fold": 2,
             "train_samples": 31,
             "test_samples": 14,
-            "model_rmse": 3408.477,
+            "model_rmse": 3139.012,
             "baseline_rmse": 3612.973,
-            "directional_accuracy_pct": 50.0
+            "directional_accuracy_pct": 57.1
           },
           {
             "fold": 3,
             "train_samples": 45,
             "test_samples": 14,
-            "model_rmse": 1355.586,
+            "model_rmse": 1576.166,
             "baseline_rmse": 1372.563,
             "directional_accuracy_pct": 50.0
           }
         ],
-        "mean_model_rmse": 4124.538,
+        "mean_model_rmse": 4108.243,
         "mean_baseline_rmse": 4104.948,
-        "mean_hit_ratio_pct": 47.6
+        "mean_hit_ratio_pct": 50.0
       },
       "feature_contributions": {
-        "technical_pct": 95.7,
-        "social_sentiment_pct": 4.3,
+        "technical_pct": 99.2,
+        "social_sentiment_pct": 0.8,
         "news_sentiment_pct": 0.0
       },
       "feature_importances": {
-        "Volume": 0.2454,
-        "volatility_5h": 0.2361,
-        "rsi_14": 0.17,
-        "dist_from_sma_5": 0.1022,
-        "dist_from_sma_10": 0.0982,
-        "dist_from_pivot": 0.0857,
-        "sentiment_ma_3h": 0.0345,
-        "return_1h": 0.0197,
-        "sentiment_momentum": 0.0082,
+        "Volume": 0.2592,
+        "volatility_5h": 0.235,
+        "rsi_14": 0.1999,
+        "dist_from_sma_5": 0.0887,
+        "dist_from_sma_10": 0.0851,
+        "return_1h": 0.0619,
+        "dist_from_pivot": 0.0618,
+        "mentions": 0.0084,
         "hourly_social_sentiment": 0.0,
-        "mentions": 0.0,
+        "sentiment_momentum": 0.0,
+        "sentiment_ma_3h": 0.0,
         "news_sentiment": 0.0,
         "news_positive_count": 0.0,
         "news_negative_count": 0.0,
@@ -1132,42 +1132,42 @@
       "test_actual_vs_pred": [
         {
           "actual": 271500.0,
-          "predicted": 269784.55,
+          "predicted": 269976.48,
           "baseline": 272000.0
         },
         {
           "actual": 272000.0,
-          "predicted": 269536.04,
+          "predicted": 269853.78,
           "baseline": 271500.0
         },
         {
           "actual": 270500.0,
-          "predicted": 270707.12,
+          "predicted": 270236.09,
           "baseline": 272000.0
         },
         {
           "actual": 268750.0,
-          "predicted": 269675.6,
+          "predicted": 268773.43,
           "baseline": 270500.0
         },
         {
           "actual": 269000.0,
-          "predicted": 267351.89,
+          "predicted": 266743.29,
           "baseline": 268750.0
         },
         {
           "actual": 267000.0,
-          "predicted": 267744.0,
+          "predicted": 267867.79,
           "baseline": 269000.0
         },
         {
           "actual": 265500.0,
-          "predicted": 265829.41,
+          "predicted": 265778.84,
           "baseline": 267000.0
         },
         {
           "actual": 266000.0,
-          "predicted": 265378.41,
+          "predicted": 265495.7,
           "baseline": 265500.0
         }
       ]
@@ -1177,11 +1177,11 @@
       "asset_name": "LG Chem",
       "exchange": "KRX",
       "current_price": 235500.0,
-      "predicted_price_n1": 233193.74,
-      "predicted_change_pct": -0.98,
-      "sentiment_score": 0.085,
+      "predicted_price_n1": 234283.76,
+      "predicted_change_pct": -0.52,
+      "sentiment_score": 0.028,
       "sentiment_direction": "Neutral",
-      "social_mentions": 35,
+      "social_mentions": 36,
       "recommended_position": "Short (Sell)",
       "sr_levels": {
         "pivot_point": 236166.67,
@@ -1194,16 +1194,16 @@
       },
       "validation_metrics": {
         "test_samples": 12,
-        "model_rmse": 3301.36,
+        "model_rmse": 2429.283,
         "baseline_rmse": 2250.0,
-        "model_mae": 2231.551,
+        "model_mae": 1721.388,
         "baseline_mae": 1708.333,
-        "model_mape_pct": 0.92,
+        "model_mape_pct": 0.71,
         "baseline_mape_pct": 0.71,
         "directional_accuracy_pct": 50.0,
-        "rmse": 3301.36,
-        "mae": 2231.551,
-        "mape_pct": 0.92
+        "rmse": 2429.283,
+        "mae": 1721.388,
+        "mape_pct": 0.71
       },
       "walk_forward_cv": {
         "folds": [
@@ -1219,85 +1219,85 @@
             "fold": 2,
             "train_samples": 31,
             "test_samples": 14,
-            "model_rmse": 3696.338,
+            "model_rmse": 3454.84,
             "baseline_rmse": 3245.877,
-            "directional_accuracy_pct": 71.4
+            "directional_accuracy_pct": 64.3
           },
           {
             "fold": 3,
             "train_samples": 45,
             "test_samples": 14,
-            "model_rmse": 3252.323,
+            "model_rmse": 2602.742,
             "baseline_rmse": 2521.338,
             "directional_accuracy_pct": 57.1
           }
         ],
-        "mean_model_rmse": 4699.386,
+        "mean_model_rmse": 4402.359,
         "mean_baseline_rmse": 4137.97,
-        "mean_hit_ratio_pct": 61.9
+        "mean_hit_ratio_pct": 59.5
       },
       "feature_contributions": {
-        "technical_pct": 97.7,
-        "social_sentiment_pct": 2.3,
-        "news_sentiment_pct": 0.0
+        "technical_pct": 60.3,
+        "social_sentiment_pct": 0.0,
+        "news_sentiment_pct": 39.7
       },
       "feature_importances": {
-        "rsi_14": 0.3432,
-        "Volume": 0.1983,
-        "volatility_5h": 0.162,
-        "return_1h": 0.158,
-        "dist_from_pivot": 0.0524,
-        "dist_from_sma_5": 0.0464,
-        "dist_from_sma_10": 0.0168,
-        "hourly_social_sentiment": 0.015,
-        "sentiment_momentum": 0.0044,
-        "mentions": 0.0036,
+        "rsi_14": 0.2226,
+        "news_negative_count": 0.2151,
+        "volatility_5h": 0.1894,
+        "news_sentiment": 0.1779,
+        "Volume": 0.0765,
+        "dist_from_pivot": 0.0421,
+        "return_1h": 0.0391,
+        "dist_from_sma_5": 0.0235,
+        "dist_from_sma_10": 0.0094,
+        "news_sentiment_ma_6h": 0.0044,
+        "hourly_social_sentiment": 0.0,
+        "sentiment_momentum": 0.0,
         "sentiment_ma_3h": 0.0,
-        "news_sentiment": 0.0,
+        "mentions": 0.0,
         "news_positive_count": 0.0,
-        "news_negative_count": 0.0,
-        "news_article_count": 0.0,
-        "news_sentiment_ma_6h": 0.0
+        "news_article_count": 0.0
       },
       "test_actual_vs_pred": [
         {
           "actual": 243500.0,
-          "predicted": 242083.62,
+          "predicted": 242076.13,
           "baseline": 243000.0
         },
         {
           "actual": 245000.0,
-          "predicted": 242420.57,
+          "predicted": 242574.23,
           "baseline": 243500.0
         },
         {
           "actual": 241500.0,
-          "predicted": 242474.65,
+          "predicted": 242387.55,
           "baseline": 245000.0
         },
         {
           "actual": 240500.0,
-          "predicted": 236820.22,
+          "predicted": 238510.06,
           "baseline": 241500.0
         },
         {
           "actual": 239500.0,
-          "predicted": 238771.65,
+          "predicted": 238053.02,
           "baseline": 240500.0
         },
         {
           "actual": 237000.0,
-          "predicted": 238125.61,
+          "predicted": 237438.26,
           "baseline": 239500.0
         },
         {
           "actual": 235500.0,
-          "predicted": 234656.37,
+          "predicted": 234972.03,
           "baseline": 237000.0
         },
         {
           "actual": 236000.0,
-          "predicted": 233193.74,
+          "predicted": 234283.76,
           "baseline": 235500.0
         }
       ]

@@ -19,7 +19,7 @@ EXA_API_KEY = os.getenv("EXA_API_KEY", "")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
 
 # Apify Actor IDs
-APIFY_TELEGRAM_ACTOR_ID = os.getenv("APIFY_TELEGRAM_ACTOR_ID", "apify/telegram-scraper")
+APIFY_TELEGRAM_ACTOR_ID = os.getenv("APIFY_TELEGRAM_ACTOR_ID", "lofomachines/telegram-keyword-search-scraper")
 APIFY_WEB_SCRAPER_ACTOR_ID = os.getenv("APIFY_WEB_SCRAPER_ACTOR_ID", "apify/web-scraper")
 APIFY_LIHKG_ACTOR_ID = os.getenv("APIFY_LIHKG_ACTOR_ID", "apify/cheerio-scraper")
 APIFY_NAVER_ACTOR_ID = os.getenv("APIFY_NAVER_ACTOR_ID", "apify/cheerio-scraper")
