@@ -158,18 +158,18 @@ Open your browser at `http://localhost:8501` to view:
 
 ## 📊 Summary of Results
 
-| Exchange | Ticker | Current Price | Pred Price ($n+1$) | Direction | Position | S1 | R1 | Hit Ratio |
+| Exchange | Ticker | Current Price | Pred Price ($n+1$) | Direction | Position | Model RMSE | Base RMSE | Hit Ratio |
 |---|---|---|---|---|---|---|---|---|
-| **HKEX** | `0700.HK` (Tencent) | 409.20 | 423.96 | Bullish | **Long (Buy)** | 408.13 | 410.33 | 35.7% |
-| **HKEX** | `9988.HK` (Alibaba) | 100.60 | 106.84 | Bullish | **Long (Buy)** | 100.40 | 100.70 | 50.0% |
-| **HKEX** | `3690.HK` (Meituan) | 72.85 | 76.51 | Bullish | **Long (Buy)** | 72.45 | 73.10 | 35.7% |
-| **HKEX** | `1211.HK` (BYD) | 69.20 | 73.18 | Bullish | **Long (Buy)** | 69.08 | 69.33 | 50.0% |
-| **HKEX** | `0005.HK` (HSBC) | 141.60 | 140.71 | Bullish | **Hold / Neutral** | 141.13 | 141.83 | 42.9% |
-| **KRX** | `005930.KS` (Samsung) | 205,500 | 215,841 | Bullish | **Long (Buy)** | 204,667 | 206,167 | 50.0% |
-| **KRX** | `000660.KS` (SK Hynix) | 1,277,000 | 1,363,944 | Bullish | **Long (Buy)** | 1,271,000 | 1,284,000 | 41.7% |
-| **KRX** | `035420.KS` (NAVER) | 196,200 | 190,622 | Bullish | **Short (Sell)** | 195,367 | 196,667 | 58.3% |
-| **KRX** | `005380.KS` (Hyundai) | 272,000 | 291,529 | Bullish | **Long (Buy)** | 271,333 | 272,833 | 58.3% |
-| **KRX** | `051910.KS` (LG Chem) | 245,000 | 243,303 | Bullish | **Hold / Neutral** | 243,000 | 246,500 | 66.7% |
+| **HKEX** | `0700.HK` (Tencent) | 400.00 | 400.91 | Bullish | **Long (Buy)** | 3.159 | 2.625 | 28.6% |
+| **HKEX** | `9988.HK` (Alibaba) | 94.00 | 93.45 | Bullish | **Short (Sell)** | **1.042** | **1.118** | **78.6%** |
+| **HKEX** | `3690.HK` (Meituan) | 72.00 | 72.04 | Neutral | **Hold / Neutral** | 0.709 | 0.667 | 42.9% |
+| **HKEX** | `1211.HK` (BYD) | 67.60 | 67.60 | Bullish | **Hold / Neutral** | 0.709 | 0.663 | 28.6% |
+| **HKEX** | `0005.HK` (HSBC) | 141.10 | 141.24 | Bullish | **Hold / Neutral** | 1.187 | 0.634 | 35.7% |
+| **KRX** | `005930.KS` (Samsung) | 208,500 | 211,040 | Bullish | **Long (Buy)** | 3,802 | 2,142 | 16.7% |
+| **KRX** | `000660.KS` (SK Hynix) | 1,267,000 | 1,224,501 | Neutral | **Short (Sell)** | 23,837 | 12,373 | 33.3% |
+| **KRX** | `035420.KS` (NAVER) | 181,900 | 183,607 | Bullish | **Long (Buy)** | 4,778 | 3,380 | 25.0% |
+| **KRX** | `005380.KS` (Hyundai) | 265,500 | 265,378 | Neutral | **Hold / Neutral** | 1,415 | 1,411 | 58.3% |
+| **KRX** | `051910.KS` (LG Chem) | 235,500 | 233,194 | Neutral | **Short (Sell)** | 3,301 | 2,250 | 50.0% |
 
 ---
 
