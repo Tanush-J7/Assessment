@@ -6,6 +6,14 @@
 
 ---
 
+> [!IMPORTANT]
+> # ⚡ TO RUN THE PROJECT USE THIS COMMAND:
+> # `python -m streamlit run src/dashboard/app.py`
+>
+> **Access the full interactive dashboard live at:** `http://localhost:8501`
+
+---
+
 ## 📌 Executive Summary
 
 This project implements an end-to-end Python-based multi-source sentiment analysis and price prediction pipeline for equities listed on the **Hong Kong Stock Exchange (HKEX / Hang Seng)** and the **Korea Exchange (KRX)**.
@@ -145,8 +153,14 @@ This executes all 6 steps in sequence and outputs:
 - `reports/visual_report.html`
 
 ### 4. Launch the Interactive Dashboard
+
+# ⚡ **TO RUN THE PROJECT USE THIS COMMAND:**
+# ```bash
+# python -m streamlit run src/dashboard/app.py
+# ```
+
 ```bash
-streamlit run src/dashboard/app.py
+python -m streamlit run src/dashboard/app.py
 ```
 Open your browser at `http://localhost:8501` to view:
 - Sortable Leaderboard by Social Mentions, Sentiment Score, and Return
