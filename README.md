@@ -124,7 +124,7 @@ Create a `.env` file from `.env.example`:
 APIFY_API_TOKEN=your_apify_token_here
 EXA_API_KEY=your_exa_api_key_here
 
-APIFY_TELEGRAM_ACTOR_ID=apify/telegram-scraper
+APIFY_TELEGRAM_ACTOR_ID=lofomachines/telegram-keyword-search-scraper
 APIFY_WEB_SCRAPER_ACTOR_ID=apify/web-scraper
 APIFY_LIHKG_ACTOR_ID=apify/cheerio-scraper
 APIFY_NAVER_ACTOR_ID=apify/cheerio-scraper
