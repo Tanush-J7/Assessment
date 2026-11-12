@@ -93,9 +93,16 @@ Daily Pivot Points are computed per asset:
 *   $\text{Resistance } 1 (R_1) = 2P - \text{Low}, \quad R_2 = P + (\text{High} - \text{Low})$
 *   $\text{Support } 1 (S_1) = 2P - \text{High}, \quad S_2 = P - (\text{High} - \text{Low})$
 
-### 3. Out-of-Sample Predictive Model ($n+1$)
-*   Features: `Close`, `Volume`, `return_1h`, `volatility_5h`, `sma_5`, `sma_10`, `rsi_14`, `dist_from_pivot`, `hourly_social_sentiment`, `sentiment_momentum`, `sentiment_ma_3h`, `mentions`.
-*   Validation: Strictly chronological $80\%$ Train and $20\%$ Test partition.
+### 3. Out-of-Sample Predictive Model ($n+1$) & Walk-Forward Validation
+*   **Target Formulation:** Trained strictly on stationary percentage return:
+    $$R_{n+1} = \frac{\text{Close}_{n+1} - \text{Close}_n}{\text{Close}_n}$$
+    Future price is reconstructed without leakage: $\hat{P}_{n+1} = \text{Close}_n \times (1 + \hat{R}_{n+1})$.
+*   **Feature Matrix (16 Features):**
+    - *Technicals:* `return_1h`, `volatility_5h`, `dist_from_sma_5`, `dist_from_sma_10`, `rsi_14`, `dist_from_pivot`, `Volume`.
+    - *Social Sentiment:* `hourly_social_sentiment`, `sentiment_momentum`, `sentiment_ma_3h`, `mentions`.
+    - *Exa News Sentiment:* `news_sentiment`, `news_positive_count`, `news_negative_count`, `news_article_count`, `news_sentiment_ma_6h`.
+*   **Naive Persistence Baseline Benchmark:** Evaluates model against the baseline ($\hat{P}_{n+1} = P_n$, i.e. zero return) across the exact same test bars.
+*   **Validation Strategy:** 3-fold chronological `TimeSeriesSplit` walk-forward cross-validation plus final 20% holdout test evaluation. Zero random shuffling, zero future lookahead.
 
 ---
 
@@ -124,8 +131,12 @@ APIFY_NAVER_ACTOR_ID=apify/cheerio-scraper
 ```
 > *Note: If API tokens are not provided, the pipeline automatically falls back to the built-in realistic historical simulation dataset for instantaneous offline reproduction.*
 
-### 3. Run the Complete Pipeline
+### 3. Run the Complete Pipeline & Automated Tests
 ```bash
+# Run automated test suite
+python -m unittest tests/test_pipeline.py
+
+# Run complete pipeline end-to-end
 python run_pipeline.py
 ```
 This executes all 6 steps in sequence and outputs:

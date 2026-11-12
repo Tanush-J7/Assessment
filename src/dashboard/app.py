@@ -85,6 +85,7 @@ def main():
     for item in exchange_assets:
         sr = item.get("sr_levels", {})
         vm = item.get("validation_metrics", {})
+        fc = item.get("feature_contributions", {})
         records.append({
             "Ticker": item["ticker"],
             "Asset Name": item["asset_name"],
@@ -97,8 +98,11 @@ def main():
             "Position": item["recommended_position"],
             "Support (S1)": sr.get("support_1", 0.0),
             "Resistance (R1)": sr.get("resistance_1", 0.0),
-            "RMSE": vm.get("rmse", 0.0),
-            "Hit Ratio (%)": vm.get("directional_accuracy_pct", 0.0)
+            "Model RMSE": vm.get("model_rmse", vm.get("rmse", 0.0)),
+            "Baseline RMSE": vm.get("baseline_rmse", 0.0),
+            "Hit Ratio (%)": vm.get("directional_accuracy_pct", 0.0),
+            "Social Imp (%)": fc.get("social_sentiment_pct", 0.0),
+            "News Imp (%)": fc.get("news_sentiment_pct", 0.0)
         })
 
     df_display = pd.DataFrame(records)
@@ -136,7 +140,7 @@ def main():
 
     asset_detail = next(item for item in exchange_assets if item["ticker"] == selected_ticker)
 
-    tab1, tab2, tab3 = st.tabs(["Price & S/R Chart", "Out-of-Sample Validation", "Feature Contribution & News"])
+    tab1, tab2, tab3 = st.tabs(["Price & S/R Chart", "Out-of-Sample & Walk-Forward Validation", "Feature Contribution & News"])
 
     with tab1:
         price_file = RAW_DATA_DIR / "market_data" / f"{selected_ticker.replace('.', '_')}_1h.csv"
@@ -179,19 +183,46 @@ def main():
     with tab2:
         col_m1, col_m2, col_m3, col_m4 = st.columns(4)
         vm = asset_detail.get("validation_metrics", {})
-        col_m1.metric("Out-of-Sample Samples", vm.get("test_samples", 0))
-        col_m2.metric("RMSE", f"{vm.get('rmse', 0.0)}")
-        col_m3.metric("MAPE", f"{vm.get('mape_pct', 0.0)}%")
+        wf = asset_detail.get("walk_forward_cv", {})
+
+        col_m1.metric("Test Samples (Holdout)", vm.get("test_samples", 0))
+        col_m2.metric(
+            "Model RMSE vs Baseline",
+            f"{vm.get('model_rmse', vm.get('rmse', 0.0))}",
+            delta=f"Baseline: {vm.get('baseline_rmse', 0.0)}",
+            delta_color="inverse"
+        )
+        col_m3.metric(
+            "Model MAE vs Baseline",
+            f"{vm.get('model_mae', vm.get('mae', 0.0))}",
+            delta=f"Baseline: {vm.get('baseline_mae', 0.0)}",
+            delta_color="inverse"
+        )
         col_m4.metric("Directional Hit Ratio", f"{vm.get('directional_accuracy_pct', 0.0)}%")
+
+        st.markdown("#### 🔄 Walk-Forward Cross-Validation (TimeSeriesSplit)")
+        if wf and "folds" in wf:
+            df_folds = pd.DataFrame(wf["folds"])
+            col_wf1, col_wf2 = st.columns([2, 1])
+            with col_wf1:
+                st.dataframe(df_folds, width="stretch")
+            with col_wf2:
+                st.info(
+                    f"**CV Mean Model RMSE:** {wf.get('mean_model_rmse', 0.0)}\n\n"
+                    f"**CV Mean Baseline RMSE:** {wf.get('mean_baseline_rmse', 0.0)}\n\n"
+                    f"**CV Mean Directional Hit Ratio:** {wf.get('mean_hit_ratio_pct', 0.0)}%"
+                )
 
         test_data = asset_detail.get("test_actual_vs_pred", [])
         if test_data:
             df_test = pd.DataFrame(test_data)
             fig_val = go.Figure()
             fig_val.add_trace(go.Scatter(y=df_test["actual"], mode="lines+markers", name="Actual Price", line=dict(color="black", width=2)))
-            fig_val.add_trace(go.Scatter(y=df_test["predicted"], mode="lines+markers", name="Predicted (n+1)", line=dict(color="royalblue", dash="dash")))
+            fig_val.add_trace(go.Scatter(y=df_test["predicted"], mode="lines+markers", name="Model Predicted (n+1)", line=dict(color="royalblue", dash="dash")))
+            if "baseline" in df_test.columns:
+                fig_val.add_trace(go.Scatter(y=df_test["baseline"], mode="lines", name="Naive Baseline (P_t)", line=dict(color="orange", dash="dot")))
             fig_val.update_layout(
-                title="Strict Out-of-Sample Validation: Actual vs. Model Predicted Price (n+1)",
+                title="Holdout Test: Actual vs Model Predicted Price vs Naive Baseline",
                 xaxis_title="Out-of-Sample Test Bar Index",
                 yaxis_title="Price",
                 height=380
@@ -199,11 +230,18 @@ def main():
             st.plotly_chart(fig_val, width="stretch")
 
     with tab3:
-        st.write("#### Feature Importance (Impact on Prediction)")
+        fc = asset_detail.get("feature_contributions", {})
+        st.write("#### 🧩 Feature Category Contributions")
+        col_c1, col_c2, col_c3 = st.columns(3)
+        col_c1.metric("Technical Indicators", f"{fc.get('technical_pct', 0.0)}%")
+        col_c2.metric("Social Community Sentiment", f"{fc.get('social_sentiment_pct', 0.0)}%")
+        col_c3.metric("Exa News Sentiment", f"{fc.get('news_sentiment_pct', 0.0)}%")
+
+        st.write("#### Detailed Feature Importance Breakdown")
         importances = asset_detail.get("feature_importances", {})
         if importances:
             df_imp = pd.DataFrame(list(importances.items()), columns=["Feature", "Importance"]).sort_values("Importance", ascending=True)
-            fig_imp = px.bar(df_imp, x="Importance", y="Feature", orientation="h", title="Feature Importance Breakdown")
+            fig_imp = px.bar(df_imp, x="Importance", y="Feature", orientation="h", title="Gradient Boosting Split Importance")
             st.plotly_chart(fig_imp, width="stretch")
 
         st.write("#### Recent Exa.com News Headlines")

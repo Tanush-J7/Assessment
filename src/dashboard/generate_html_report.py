@@ -195,9 +195,10 @@ def generate_html_report() -> Path:
                     <th>Direction</th>
                     <th>Social Mentions</th>
                     <th>Position</th>
-                    <th>Support (S1)</th>
-                    <th>Resistance (R1)</th>
-                    <th>Out-of-Sample Hit Ratio</th>
+                    <th>Model RMSE</th>
+                    <th>Baseline RMSE</th>
+                    <th>Hit Ratio</th>
+                    <th>Tech / Social / News</th>
                 </tr>
             </thead>
             <tbody>
@@ -206,6 +207,7 @@ def generate_html_report() -> Path:
         for item in items_sorted:
             sr = item.get("sr_levels", {})
             vm = item.get("validation_metrics", {})
+            fc = item.get("feature_contributions", {})
             direction = item.get("sentiment_direction", "Neutral")
             badge_class = "badge-bullish" if direction == "Bullish" else ("badge-bearish" if direction == "Bearish" else "badge-neutral")
             
@@ -223,9 +225,10 @@ def generate_html_report() -> Path:
                     <td><span class="{badge_class}">{direction}</span></td>
                     <td>{item['social_mentions']}</td>
                     <td class="{pos_class}">{pos}</td>
-                    <td>{sr.get('support_1', 'N/A')}</td>
-                    <td>{sr.get('resistance_1', 'N/A')}</td>
+                    <td><b>{vm.get('model_rmse', vm.get('rmse', 0.0))}</b></td>
+                    <td>{vm.get('baseline_rmse', 0.0)}</td>
                     <td><b>{vm.get('directional_accuracy_pct', 0.0)}%</b></td>
+                    <td>{fc.get('technical_pct', 0.0)}% / {fc.get('social_sentiment_pct', 0.0)}% / {fc.get('news_sentiment_pct', 0.0)}%</td>
                 </tr>
             """
 

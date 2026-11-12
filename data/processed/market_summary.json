@@ -4,91 +4,91 @@
       "ticker": "0700.HK",
       "asset_name": "Tencent Holdings",
       "exchange": "HKEX",
-      "current_price": 409.6,
-      "price_change_pct": 0.1,
+      "current_price": 398.8,
+      "price_change_pct": -0.3,
       "sr_levels": {
-        "pivot_point": 408.87,
-        "resistance_1": 410.33,
-        "resistance_2": 411.07,
-        "support_1": 408.13,
-        "support_2": 406.67,
+        "pivot_point": 398.2,
+        "resistance_1": 400.6,
+        "resistance_2": 402.4,
+        "support_1": 396.4,
+        "support_2": 394.0,
         "rolling_min_10d": 375.2,
         "rolling_max_10d": 431.2
       },
       "data_points": 70,
-      "last_updated_utc": "2026-11-11T14:11:24.299995+00:00"
+      "last_updated_utc": "2026-11-12T09:54:43.281520+00:00"
     },
     {
       "ticker": "9988.HK",
       "asset_name": "Alibaba Group",
       "exchange": "HKEX",
-      "current_price": 100.6,
-      "price_change_pct": 0.1,
+      "current_price": 93.8,
+      "price_change_pct": -0.21,
       "sr_levels": {
-        "pivot_point": 100.5,
-        "resistance_1": 100.7,
-        "resistance_2": 100.8,
-        "support_1": 100.4,
-        "support_2": 100.2,
-        "rolling_min_10d": 95.1,
+        "pivot_point": 93.82,
+        "resistance_1": 94.23,
+        "resistance_2": 94.67,
+        "support_1": 93.38,
+        "support_2": 92.97,
+        "rolling_min_10d": 93.25,
         "rolling_max_10d": 109.4
       },
       "data_points": 70,
-      "last_updated_utc": "2026-11-11T14:11:24.543930+00:00"
+      "last_updated_utc": "2026-11-12T09:54:43.388052+00:00"
     },
     {
       "ticker": "3690.HK",
       "asset_name": "Meituan",
       "exchange": "HKEX",
-      "current_price": 72.85,
+      "current_price": 72.1,
       "price_change_pct": 0.14,
       "sr_levels": {
-        "pivot_point": 72.7,
-        "resistance_1": 73.1,
-        "resistance_2": 73.35,
-        "support_1": 72.45,
-        "support_2": 72.05,
+        "pivot_point": 71.95,
+        "resistance_1": 72.3,
+        "resistance_2": 72.5,
+        "support_1": 71.75,
+        "support_2": 71.4,
         "rolling_min_10d": 68.85,
         "rolling_max_10d": 83.0
       },
       "data_points": 70,
-      "last_updated_utc": "2026-11-11T14:11:24.690549+00:00"
+      "last_updated_utc": "2026-11-12T09:54:43.492218+00:00"
     },
     {
       "ticker": "1211.HK",
       "asset_name": "BYD Company",
       "exchange": "HKEX",
-      "current_price": 69.2,
-      "price_change_pct": -0.14,
+      "current_price": 67.55,
+      "price_change_pct": -0.07,
       "sr_levels": {
-        "pivot_point": 69.22,
-        "resistance_1": 69.33,
-        "resistance_2": 69.47,
-        "support_1": 69.08,
-        "support_2": 68.97,
+        "pivot_point": 67.52,
+        "resistance_1": 67.68,
+        "resistance_2": 67.82,
+        "support_1": 67.38,
+        "support_2": 67.22,
         "rolling_min_10d": 67.0,
         "rolling_max_10d": 76.85
       },
       "data_points": 70,
-      "last_updated_utc": "2026-11-11T14:11:24.833066+00:00"
+      "last_updated_utc": "2026-11-12T09:54:43.589274+00:00"
     },
     {
       "ticker": "0005.HK",
       "asset_name": "HSBC Holdings",
       "exchange": "HKEX",
-      "current_price": 141.6,
-      "price_change_pct": 0.28,
+      "current_price": 140.7,
+      "price_change_pct": -0.28,
       "sr_levels": {
-        "pivot_point": 141.37,
-        "resistance_1": 141.83,
-        "resistance_2": 142.07,
-        "support_1": 141.13,
-        "support_2": 140.67,
+        "pivot_point": 140.87,
+        "resistance_1": 141.03,
+        "resistance_2": 141.37,
+        "support_1": 140.53,
+        "support_2": 140.37,
         "rolling_min_10d": 131.1,
         "rolling_max_10d": 143.3
       },
       "data_points": 70,
-      "last_updated_utc": "2026-11-11T14:11:24.972201+00:00"
+      "last_updated_utc": "2026-11-12T09:54:43.766215+00:00"
     }
   ],
   "KRX": [
@@ -96,91 +96,91 @@
       "ticker": "005930.KS",
       "asset_name": "Samsung Electronics",
       "exchange": "KRX",
-      "current_price": 205500.0,
-      "price_change_pct": 0.37,
+      "current_price": 208000.0,
+      "price_change_pct": -0.24,
       "sr_levels": {
-        "pivot_point": 205333.33,
-        "resistance_1": 206166.67,
-        "resistance_2": 206833.33,
-        "support_1": 204666.67,
-        "support_2": 203833.33,
+        "pivot_point": 207666.67,
+        "resistance_1": 209333.33,
+        "resistance_2": 210666.67,
+        "support_1": 206333.33,
+        "support_2": 204666.67,
         "rolling_min_10d": 179200.0,
-        "rolling_max_10d": 249000.0
+        "rolling_max_10d": 232000.0
       },
       "data_points": 60,
-      "last_updated_utc": "2026-11-11T14:11:25.135872+00:00"
+      "last_updated_utc": "2026-11-12T09:54:43.881581+00:00"
     },
     {
       "ticker": "000660.KS",
       "asset_name": "SK Hynix",
       "exchange": "KRX",
-      "current_price": 1277000.0,
-      "price_change_pct": 0.16,
+      "current_price": 1255000.0,
+      "price_change_pct": -0.95,
       "sr_levels": {
-        "pivot_point": 1278000.0,
-        "resistance_1": 1284000.0,
-        "resistance_2": 1291000.0,
-        "support_1": 1271000.0,
-        "support_2": 1265000.0,
+        "pivot_point": 1257000.0,
+        "resistance_1": 1269000.0,
+        "resistance_2": 1283000.0,
+        "support_1": 1243000.0,
+        "support_2": 1231000.0,
         "rolling_min_10d": 1089000.0,
-        "rolling_max_10d": 1587000.0
+        "rolling_max_10d": 1498000.0
       },
       "data_points": 60,
-      "last_updated_utc": "2026-11-11T14:11:25.285481+00:00"
+      "last_updated_utc": "2026-11-12T09:54:44.000391+00:00"
     },
     {
       "ticker": "035420.KS",
       "asset_name": "NAVER",
       "exchange": "KRX",
-      "current_price": 196200.0,
-      "price_change_pct": 0.36,
+      "current_price": 181500.0,
+      "price_change_pct": -0.22,
       "sr_levels": {
-        "pivot_point": 195833.33,
-        "resistance_1": 196666.67,
-        "resistance_2": 197133.33,
-        "support_1": 195366.67,
-        "support_2": 194533.33,
+        "pivot_point": 181633.33,
+        "resistance_1": 182166.67,
+        "resistance_2": 182833.33,
+        "support_1": 180966.67,
+        "support_2": 180433.33,
         "rolling_min_10d": 166000.0,
         "rolling_max_10d": 197900.0
       },
       "data_points": 60,
-      "last_updated_utc": "2026-11-11T14:11:25.495062+00:00"
+      "last_updated_utc": "2026-11-12T09:54:44.104810+00:00"
     },
     {
       "ticker": "005380.KS",
       "asset_name": "Hyundai Motor",
       "exchange": "KRX",
-      "current_price": 272000.0,
-      "price_change_pct": 0.18,
+      "current_price": 266000.0,
+      "price_change_pct": 0.19,
       "sr_levels": {
-        "pivot_point": 272166.67,
-        "resistance_1": 272833.33,
-        "resistance_2": 273666.67,
-        "support_1": 271333.33,
-        "support_2": 270666.67,
-        "rolling_min_10d": 267500.0,
-        "rolling_max_10d": 309500.0
+        "pivot_point": 265500.0,
+        "resistance_1": 267000.0,
+        "resistance_2": 268000.0,
+        "support_1": 264500.0,
+        "support_2": 263000.0,
+        "rolling_min_10d": 264000.0,
+        "rolling_max_10d": 308000.0
       },
       "data_points": 60,
-      "last_updated_utc": "2026-11-11T14:11:25.627537+00:00"
+      "last_updated_utc": "2026-11-12T09:54:44.205369+00:00"
     },
     {
       "ticker": "051910.KS",
       "asset_name": "LG Chem",
       "exchange": "KRX",
-      "current_price": 245000.0,
-      "price_change_pct": 0.62,
+      "current_price": 236000.0,
+      "price_change_pct": 0.21,
       "sr_levels": {
-        "pivot_point": 244500.0,
-        "resistance_1": 246500.0,
-        "resistance_2": 248000.0,
-        "support_1": 243000.0,
-        "support_2": 241000.0,
+        "pivot_point": 236166.67,
+        "resistance_1": 237333.33,
+        "resistance_2": 238666.67,
+        "support_1": 234833.33,
+        "support_2": 233666.67,
         "rolling_min_10d": 221500.0,
         "rolling_max_10d": 253500.0
       },
       "data_points": 60,
-      "last_updated_utc": "2026-11-11T14:11:25.775143+00:00"
+      "last_updated_utc": "2026-11-12T09:54:44.306917+00:00"
     }
   ]
 }

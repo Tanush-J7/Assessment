@@ -84,10 +84,51 @@ def build_aligned_feature_matrix(ticker: str) -> pd.DataFrame:
         resampled_social["mentions"] = 0
         resampled_social["hourly_social_sentiment"] = 0.0
 
-    # Align price and social features using merge_asof / reindex
+    # FIX 1: Process Exa News Data
+    news_records = []
+    if news_file.exists():
+        with open(news_file, "r", encoding="utf-8") as f:
+            raw_news = json.load(f)
+            for n in raw_news:
+                pub_ts = pd.to_datetime(n.get("published_date_utc"), utc=True)
+                title_snip = f"{n.get('title', '')} {n.get('snippet', '')}"
+                pol = analyze_text_sentiment(title_snip)
+                news_records.append({
+                    "timestamp_utc": pub_ts,
+                    "news_sentiment": pol,
+                    "news_positive_count": 1 if pol > 0.05 else 0,
+                    "news_negative_count": 1 if pol < -0.05 else 0,
+                    "news_article_count": 1
+                })
+
+    df_news = pd.DataFrame(news_records)
+    if not df_news.empty:
+        df_news.set_index("timestamp_utc", inplace=True)
+        resampled_news = df_news.resample("1h").agg({
+            "news_sentiment": "mean",
+            "news_positive_count": "sum",
+            "news_negative_count": "sum",
+            "news_article_count": "sum"
+        }).fillna(0)
+    else:
+        resampled_news = pd.DataFrame(index=df_price.index)
+        resampled_news["news_sentiment"] = 0.0
+        resampled_news["news_positive_count"] = 0
+        resampled_news["news_negative_count"] = 0
+        resampled_news["news_article_count"] = 0
+
+    # Align price and social features using backward-looking merge_asof (zero future leakage)
     df_aligned = pd.merge_asof(
         df_price.reset_index(),
         resampled_social.reset_index(),
+        on="timestamp_utc",
+        direction="backward"
+    ).fillna(0)
+
+    # Merge news features (backward-looking merge_asof to prevent lookahead)
+    df_aligned = pd.merge_asof(
+        df_aligned,
+        resampled_news.reset_index(),
         on="timestamp_utc",
         direction="backward"
     ).fillna(0)
@@ -97,23 +138,27 @@ def build_aligned_feature_matrix(ticker: str) -> pd.DataFrame:
     df_aligned["volatility_5h"] = df_aligned["return_1h"].rolling(5, min_periods=1).std().fillna(0)
     df_aligned["sma_5"] = df_aligned["Close"].rolling(5, min_periods=1).mean()
     df_aligned["sma_10"] = df_aligned["Close"].rolling(10, min_periods=1).mean()
+    df_aligned["dist_from_sma_5"] = (df_aligned["Close"] - df_aligned["sma_5"]) / (df_aligned["sma_5"] + 1e-9)
+    df_aligned["dist_from_sma_10"] = (df_aligned["Close"] - df_aligned["sma_10"]) / (df_aligned["sma_10"] + 1e-9)
     df_aligned["rsi_14"] = calculate_rsi(df_aligned["Close"], 14)
 
     # Pivot Point & S/R Features
     pivot = (df_aligned["High"] + df_aligned["Low"] + df_aligned["Close"]) / 3.0
     df_aligned["dist_from_pivot"] = (df_aligned["Close"] - pivot) / (pivot + 1e-9)
 
-    # Rolling Sentiment Features
+    # Rolling Sentiment Features (Social & News)
     df_aligned["sentiment_momentum"] = df_aligned["hourly_social_sentiment"].diff().fillna(0)
     df_aligned["sentiment_ma_3h"] = df_aligned["hourly_social_sentiment"].rolling(3, min_periods=1).mean()
+    df_aligned["news_sentiment_ma_6h"] = df_aligned["news_sentiment"].rolling(6, min_periods=1).mean()
 
-    # Target Variables (n+1)
+    # FIX 2: Target Variables (n+1)
+    # Formulate prediction target strictly as percentage return: (Close[n+1] - Close[n]) / Close[n]
     df_aligned["target_price_n1"] = df_aligned["Close"].shift(-1)
-    df_aligned["target_return_n1"] = df_aligned["return_1h"].shift(-1)
+    df_aligned["target_return_n1"] = (df_aligned["Close"].shift(-1) - df_aligned["Close"]) / df_aligned["Close"]
     df_aligned["target_direction_n1"] = (df_aligned["target_return_n1"] > 0).astype(int)
 
-    # Drop last row where target_price_n1 is NaN
-    df_aligned_clean = df_aligned.dropna(subset=["target_price_n1"]).copy()
+    # Drop last row where target is NaN
+    df_aligned_clean = df_aligned.dropna(subset=["target_price_n1", "target_return_n1"]).copy()
 
     # Save to disk
     out_file = ALIGNMENT_DIR / f"{ticker.replace('.', '_')}_aligned.csv"
