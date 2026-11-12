@@ -66,9 +66,8 @@ def build_actor_payload(actor_id: str, source: str, ticker: str, asset_name: str
             "startUrls": [
                 {"url": f"https://lihkg.com/search?q={primary_query}&sort=latest"}
             ],
-            "maxRequestsPerCrawl": 20,
-            "searchKeywords": search_queries[:3],
-            "pageFunction": "async function pageFunction(context) { const { $ } = context; return $('[data-ast-id]').map((i, el) => ({ text: $(el).text() })).get(); }"
+            "maxRequestsPerCrawl": 5,
+            "pageFunction": "async function pageFunction(context) { const { $, request, pushData } = context; const items = []; $('[data-ast-id], .post-item, a[href*=\"/thread/\"]').each((i, el) => { const text = $(el).text().trim(); if (text && text.length > 5) { items.push({ text: text, url: request.url, postId: $(el).attr('data-ast-id') || (i + 1), date: new Date().toISOString() }); } }); if (items.length > 0) { await pushData(items); } else { await pushData({ text: $('title').text(), url: request.url, date: new Date().toISOString() }); } }"
         }
 
     # 3. Naver Finance Discussion Board Schema (종목토론실)
@@ -78,10 +77,8 @@ def build_actor_payload(actor_id: str, source: str, ticker: str, asset_name: str
             "startUrls": [
                 {"url": f"https://finance.naver.com/item/board.naver?code={stock_code}"}
             ],
-            "maxRequestsPerCrawl": 20,
-            "stockCode": stock_code,
-            "keywords": search_queries[:3],
-            "pageFunction": "async function pageFunction(context) { const { $ } = context; return $('.title a').map((i, el) => ({ text: $(el).text() })).get(); }"
+            "maxRequestsPerCrawl": 5,
+            "pageFunction": "async function pageFunction(context) { const { $, request, pushData } = context; const items = []; $('.title a, [class*=\"DiscussionItem\"], a[href*=\"nid=\"]').each((i, el) => { const text = $(el).text().trim(); const href = $(el).attr('href') || ''; if (text && text.length > 3) { items.push({ text: text, url: 'https://finance.naver.com' + href, postId: (href.match(/nid=(\\d+)/) || [])[1] || (i + 1), date: new Date().toISOString() }); } }); if (items.length > 0) { await pushData(items); } else { await pushData({ text: $('title').text(), url: request.url, date: new Date().toISOString() }); } }"
         }
 
     # Fallback generic payload with validated search fields
@@ -161,6 +158,9 @@ def deduplicate_posts(posts: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 def normalize_social_post(raw_item: Dict[str, Any], ticker: str, asset_name: str, exchange: str, source: str) -> Dict[str, Any]:
     """Standardizes scraped post into common schema with UTC timestamp."""
+    text = str(raw_item.get("text", raw_item.get("body", ""))).strip()
+    if not text or "#debug" in raw_item:
+        return {}
     return {
         "post_id": str(raw_item.get("id", raw_item.get("postId", random.randint(100000, 999999)))),
         "ticker": ticker,
@@ -168,7 +168,7 @@ def normalize_social_post(raw_item: Dict[str, Any], ticker: str, asset_name: str
         "exchange": exchange,
         "source": source,
         "timestamp_utc": raw_item.get("date", datetime.now(timezone.utc).isoformat()),
-        "text": raw_item.get("text", raw_item.get("body", "")),
+        "text": text,
         "likes": int(raw_item.get("likes", raw_item.get("upvotes", 0))),
         "reposts": int(raw_item.get("reposts", raw_item.get("shares", 0))),
         "views": int(raw_item.get("views", 0)),
@@ -199,7 +199,9 @@ def scrape_social_posts(ticker: str, asset_name: str, exchange: str, days: int =
             if status == "SUCCESS" and raw_items:
                 successful_sources.add(source)
                 for item in raw_items:
-                    posts.append(normalize_social_post(item, ticker, asset_name, exchange, source))
+                    norm = normalize_social_post(item, ticker, asset_name, exchange, source)
+                    if norm and norm.get("text"):
+                        posts.append(norm)
 
     # If some or all sources were not scraped live, supplement with representative dataset
     missing_sources = [s for s in sources if s not in successful_sources]
