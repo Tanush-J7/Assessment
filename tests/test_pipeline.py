@@ -58,10 +58,12 @@ class TestPipelineFixes(unittest.TestCase):
         """Verify FIX 3 & 4: Actor payload builder creates source-specific schemas and includes cashtags/keywords."""
         # Test Telegram schema
         tg_payload = build_actor_payload("apify/telegram-scraper", "telegram", "0700.HK", "Tencent Holdings", "HKEX", 10)
-        self.assertIn("searchQueries", tg_payload)
-        self.assertIn("messagesLimit", tg_payload)
+        self.assertEqual(tg_payload.get("mode"), "keyword")
+        self.assertIn("keywords", tg_payload)
+        self.assertIn("maxResultsPerKeyword", tg_payload)
+        self.assertIn("afterDate", tg_payload)
         # Check cashtags and keywords are included
-        queries_str = " ".join(tg_payload["searchQueries"])
+        queries_str = " ".join(tg_payload["keywords"])
         self.assertTrue("$0700" in queries_str or "0700" in queries_str)
 
         # Validate payload

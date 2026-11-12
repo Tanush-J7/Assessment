@@ -48,14 +48,15 @@ def build_actor_payload(actor_id: str, source: str, ticker: str, asset_name: str
 
     start_date = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
 
-    # 1. Telegram Scraper Schema (e.g. apify/telegram-scraper)
+    # 1. Telegram Scraper Schema (Exact match for Apify Telegram Scraper schema)
     if source == "telegram":
         return {
-            "searchQueries": search_queries[:4],
-            "messagesLimit": 50,
-            "onlyChannels": True,
-            "startDate": start_date,
-            "language": "en" if exchange == "HKEX" else "ko"
+            "mode": "keyword",
+            "keywords": search_queries[:4],
+            "afterDate": f"{days} days",
+            "maxResultsPerKeyword": 50,
+            "languageCode": "en" if exchange == "HKEX" else "ko",
+            "countryCode": "hk" if exchange == "HKEX" else "kr"
         }
 
     # 2. LIHKG Forum Scraper Schema (using Cheerio / Web Crawler targeting LIHKG search)
@@ -98,8 +99,8 @@ def validate_actor_payload(actor_id: str, payload: Dict[str, Any]) -> Tuple[bool
     if not payload:
         return False, "Payload dictionary is empty"
 
-    if "telegram" in actor_id and "searchQueries" not in payload and "telegramChannels" not in payload:
-        return False, "Telegram actor requires 'searchQueries' or 'telegramChannels'"
+    if "telegram" in actor_id and "keywords" not in payload and "channels" not in payload and "searchQueries" not in payload:
+        return False, "Telegram actor requires 'keywords', 'channels', or 'searchQueries'"
 
     if "cheerio" in actor_id and "startUrls" not in payload:
         return False, "Cheerio scraper requires 'startUrls'"
